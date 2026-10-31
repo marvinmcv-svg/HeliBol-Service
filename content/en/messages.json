@@ -1,0 +1,382 @@
+{
+  "meta": {
+    "siteTitle": "Helibol — Helicopter services in Bolivia since 1988",
+    "siteDescription": "Family-run helicopter operator based in Santa Cruz de la Sierra, Bolivia. Energy & mining, rescue & MEDEVAC, aerial firefighting, cargo, VIP and scenic flights. Bell 212, Bell 412 and H125.",
+    "services": "Helicopter services",
+    "servicesDescription": "Energy & mining, rescue & MEDEVAC, aerial firefighting, cargo & construction, VIP & scenic flights, film & photography.",
+    "fleet": "Fleet",
+    "fleetDescription": "Bell 212, Bell 412 and Airbus H125: the right aircraft for every mission.",
+    "about": "About",
+    "aboutDescription": "A family company flying since 1988 from Hangar 22, El Trompillo, Santa Cruz.",
+    "operations": "Operations",
+    "operationsDescription": "100+ exploration projects across Bolivia, Argentina and Peru.",
+    "scenic": "Scenic helicopter flights",
+    "scenicDescription": "Give the gift of the sky: scenic helicopter flights in Santa Cruz and across Bolivia for birthdays, anniversaries, proposals and more.",
+    "quote": "Request a quote",
+    "quoteDescription": "Tell us your mission and a specialist will contact you within one business day.",
+    "contact": "Contact",
+    "contactDescription": "Hangar 22, El Trompillo Airport, Santa Cruz de la Sierra. 24/7 emergencies: +591 3 352 9469.",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use"
+  },
+  "common": {
+    "skip": "Skip to content",
+    "quote": "Request a quote",
+    "talkToHeli": "Talk to Heli",
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "viewService": "View service",
+    "viewSpecs": "View specs",
+    "learnMore": "Learn more",
+    "back": "Back",
+    "next": "Next",
+    "emergencyPill": "24/7 Emergencies",
+    "emergency": "Emergency?",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "Language",
+    "view": "View",
+    "drag": "Drag",
+    "years": "years",
+    "since": "Since 1988",
+    "liftOff": "Lift off"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "fleet": "Fleet",
+    "operations": "Operations",
+    "scenic": "Scenic Flights",
+    "about": "About",
+    "contact": "Contact",
+    "quote": "Quote"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "VERTICAL EFFICIENCY · EST. 1988 · SANTA CRUZ, BOLIVIA",
+      "title": "Where the roads end, we begin.",
+      "sub": "Since 1988, we've flown people, cargo and help to Bolivia's most remote corners, with 38 years of experience and the care of a family company.",
+      "hud": "HANGAR 22 · EL TROMPILLO",
+      "altitude": "ALT",
+      "scroll": "Lift off"
+    },
+    "stats": {
+      "years": "years in the air",
+      "projects": "exploration projects",
+      "countries": "countries flown",
+      "countriesNote": "Bolivia · Argentina · Peru",
+      "emergency": "emergency response"
+    },
+    "marquee": [
+      "IOGP STANDARDS",
+      "AUDITED BY INTERNATIONAL OPERATORS",
+      "BELL 212",
+      "BELL 412",
+      "H125",
+      "SAR",
+      "MEDEVAC",
+      "BAMBI BUCKET",
+      "LONG-LINE"
+    ],
+    "services": {
+      "eyebrow": "WHAT WE DO",
+      "title": "A helicopter for every mission.",
+      "lead": "We study the terrain, the altitude, the payload and the goal, and recommend the exact aircraft for the job. Nothing more, nothing less."
+    },
+    "story": {
+      "eyebrow": "SINCE 1988",
+      "title": "We're a family company. We fly like one.",
+      "body": "Helibol was born in 1988 in a hangar at El Trompillo with a single Bell 47 and one conviction: distance should never leave anyone without help. Thirty-eight years later, our pilots, engineers and crew still follow the same rule: everyone who comes aboard comes home. Yours and ours.",
+      "link": "Read our story"
+    },
+    "fleet": {
+      "eyebrow": "FLEET",
+      "title": "The right fleet, ready to fly.",
+      "bestFor": "Best for",
+      "turnkeyTitle": "Turnkey Projects",
+      "turnkeyBody": "Need your own aircraft? We'll help you source, inspect and import it through our international network.",
+      "turnkeyCta": "Enquire"
+    },
+    "map": {
+      "eyebrow": "OPERATIONS",
+      "title": "We've already been there.",
+      "lead": "100+ exploration projects across Bolivia, Argentina and Peru. Here are some of the most recent.",
+      "base": "Base · Hangar 22",
+      "cta": "See all operations"
+    },
+    "safety": {
+      "eyebrow": "SAFETY",
+      "title": "Safety isn't a department. It's our culture.",
+      "pillars": [
+        {
+          "title": "Internationally audited",
+          "body": "We meet IOGP standards and are audited and approved by top-tier international operators."
+        },
+        {
+          "title": "Experienced crews",
+          "body": "Pilots and engineers with deep experience over jungle, altiplano and mountains."
+        },
+        {
+          "title": "Rapid response",
+          "body": "Engineers, parts and advice one call away, with direct lines into our international network."
+        },
+        {
+          "title": "Expert advice",
+          "body": "We recommend the aircraft with exactly the capacity your mission needs."
+        }
+      ],
+      "eco": "Long-line operations reduce the need to clear helipads, protecting the places we work in."
+    },
+    "scenic": {
+      "eyebrow": "SCENIC FLIGHTS",
+      "title": "Bolivia, like you've never seen it.",
+      "body": "Birthdays, anniversaries, proposals, or simply the gift of seeing your homeland from the sky. Scenic flights and private transfers with professional crews and the peace of mind of 38 years' experience.",
+      "cta": "Book a flight"
+    },
+    "testimonials": {
+      "eyebrow": "TESTIMONIALS",
+      "title": "What people who fly with us say."
+    },
+    "cta": {
+      "title": "Tell us your mission. We'll handle the rest.",
+      "sub": "Reply within one business day. Emergencies: 24/7."
+    }
+  },
+  "footer": {
+    "mission": "People, cargo and help to Bolivia's most remote corners, since 1988.",
+    "services": "Services",
+    "company": "Company",
+    "contact": "Contact",
+    "map": "View on map",
+    "rights": "All rights reserved.",
+    "badge": "38 YEARS"
+  },
+  "servicesPage": {
+    "eyebrow": "SERVICES",
+    "title": "A helicopter for every mission.",
+    "lead": "Six service lines, one way of working: understand your mission and fly the exact aircraft for it.",
+    "challenge": "The challenge",
+    "how": "How we do it",
+    "aircraft": "Recommended aircraft",
+    "capabilities": "Capabilities",
+    "related": "Related operation",
+    "faq": "FAQ",
+    "emergencyCall": "Call now · 24/7",
+    "proof": "100+ projects · IOGP standards"
+  },
+  "fleetPage": {
+    "eyebrow": "FLEET",
+    "title": "The right fleet, ready to fly.",
+    "lead": "Three platforms proven over jungle, altiplano and mountains. We'll recommend the one your mission needs.",
+    "specs": "Specifications",
+    "metric": "Metric",
+    "imperial": "Imperial",
+    "idealFor": "Ideal for",
+    "gallery": "Gallery",
+    "request": "Request this aircraft",
+    "specsNote": "Reference figures. Real capacity depends on altitude, temperature and configuration; a specialist confirms it for your mission.",
+    "turnkeyTitle": "Turnkey Projects",
+    "turnkeyBody": "Need your own aircraft? We'll help you source, inspect and import it through our international network.",
+    "turnkeyCta": "Enquire"
+  },
+  "aboutPage": {
+    "eyebrow": "ABOUT",
+    "title": "A family of aviators, since 1988.",
+    "lead": "Helibol was born in a hangar at El Trompillo with a Bell 47. Today it's one of Bolivia's largest helicopter operators — and still a family company.",
+    "timelineTitle": "Our story",
+    "timeline": [
+      {
+        "year": "1988",
+        "title": "The first flight",
+        "body": "With a Bell 47 at Hangar 22, El Trompillo, Helibol is born with one conviction: distance should never leave anyone without help."
+      },
+      {
+        "year": "Growth",
+        "title": "The energy sector",
+        "body": "Oil and mining exploration takes us into the jungle, the foothills and the altiplano. We add twin-engine aircraft and international standards."
+      },
+      {
+        "year": "Region",
+        "title": "Argentina and Peru",
+        "body": "Our experience crosses borders: we support exploration projects in Argentina and Peru."
+      },
+      {
+        "year": "Modernisation",
+        "title": "Bell 412 and H125",
+        "body": "We add the four-blade Bell 412 and the Airbus H125, king of high altitude."
+      },
+      {
+        "year": "2026",
+        "title": "38 years in the air",
+        "body": "100+ exploration projects, rescues, fires and thousands of passengers who made it home."
+      }
+    ],
+    "valuesTitle": "Our values",
+    "values": [
+      { "title": "Safety", "body": "Everyone who comes aboard comes home." },
+      { "title": "Precision", "body": "The exact aircraft, the exact plan, every time." },
+      { "title": "Family", "body": "We treat clients and crew like our own." },
+      { "title": "Service", "body": "One call away, 24/7." }
+    ],
+    "peopleTitle": "Our people",
+    "peopleBody": "Pilots, engineers and crew who know Bolivia from the air. Behind every flight is a team on the ground making sure it goes right.",
+    "certTitle": "Standards and audits",
+    "certs": ["IOGP standards", "Audited by international operators", "24/7 emergency line"],
+    "visitTitle": "Visit us at Hangar 22",
+    "visitBody": "El Trompillo Airport, Santa Cruz de la Sierra, Bolivia."
+  },
+  "operationsPage": {
+    "eyebrow": "OPERATIONS",
+    "title": "We've already been there.",
+    "lead": "100+ exploration projects across Bolivia, Argentina and Peru. A selection of the most recent.",
+    "all": "All",
+    "year": "Year",
+    "region": "Region",
+    "sector": "Sector",
+    "energy": "Energy & mining",
+    "empty": "No projects match these filters.",
+    "count": "{count, plural, one {# project} other {# projects}}"
+  },
+  "scenicPage": {
+    "eyebrow": "SCENIC FLIGHTS",
+    "title": "Give the gift of the sky.",
+    "lead": "Bolivia from above, with your family, your partner or your team. Flights on request with professional crews and 38 years of experience.",
+    "occasionsTitle": "For every occasion",
+    "occasions": [
+      { "title": "Birthday", "body": "A gift no one forgets." },
+      { "title": "Anniversary", "body": "Celebrate from above." },
+      { "title": "Proposal", "body": "The biggest question, with the best view." },
+      { "title": "Corporate", "body": "Reward your team or host your guests." },
+      { "title": "Photography", "body": "Aerial shots for memories or projects." }
+    ],
+    "howTitle": "How it works",
+    "how": [
+      { "title": "Choose", "body": "Tell us the occasion, the date and how many people are flying." },
+      {
+        "title": "We confirm weather and route",
+        "body": "A specialist confirms the aircraft, the route and the conditions."
+      },
+      { "title": "Fly", "body": "Safety briefing, lift-off, and enjoy." }
+    ],
+    "safetyTitle": "Peace of mind, every minute",
+    "safetyBody": "Before take-off, the crew walks you through everything: how to board, where to sit and what to expect. If the weather isn't right, we reschedule.",
+    "faqTitle": "FAQ",
+    "faqs": [
+      {
+        "q": "Are there weight limits?",
+        "a": "Yes. For safety and aircraft balance, we'll ask for each passenger's approximate weight when you book."
+      },
+      {
+        "q": "Can children fly?",
+        "a": "Yes, accompanied by an adult. A specialist will explain the conditions when you book."
+      },
+      {
+        "q": "What should I wear?",
+        "a": "Comfortable clothes, closed shoes, and nothing that could blow away, like hats or loose scarves."
+      },
+      {
+        "q": "What if the weather is bad?",
+        "a": "Safety comes first. If conditions aren't suitable, we'll reschedule your flight with no fuss."
+      },
+      {
+        "q": "Do you offer gift vouchers?",
+        "a": "Ask us. We can prepare a flight as a gift for a special date."
+      }
+    ],
+    "cta": "Check availability",
+    "noPrices": "Every flight is arranged on request. A specialist confirms availability and cost."
+  },
+  "contactPage": {
+    "eyebrow": "CONTACT",
+    "title": "Let's talk about your mission.",
+    "lead": "Reply within one business day. Emergencies: 24/7.",
+    "phone": "Phone",
+    "email": "Email",
+    "visit": "Visit us",
+    "emergencyTitle": "Is it an emergency?",
+    "emergencyBody": "Call our 24/7 line right away. If a life is at risk, also call local emergency services.",
+    "formTitle": "Send us a message"
+  },
+  "form": {
+    "name": "Full name",
+    "company": "Company (optional)",
+    "email": "Email",
+    "phone": "Phone / WhatsApp",
+    "message": "Message",
+    "language": "Preferred language",
+    "send": "Send",
+    "sending": "Sending…",
+    "consent": "I agree that Helibol may use this data to reply to my request, in line with the privacy policy.",
+    "success": "Received. A specialist will contact you within one business day.",
+    "error": "We couldn't send your message. Please try again or email info@helibol.com.",
+    "required": "Required",
+    "invalidEmail": "Invalid email",
+    "contactRequired": "Please give an email or a phone number"
+  },
+  "quote": {
+    "eyebrow": "QUOTE",
+    "title": "Tell us your mission.",
+    "lead": "Five steps, under two minutes. A specialist will contact you within one business day.",
+    "step": "Step {current} of {total}",
+    "steps": ["Mission", "Dates", "Route & load", "Contact", "Review"],
+    "missionTitle": "What kind of mission is it?",
+    "types": {
+      "energy": "Energy & mining",
+      "rescue": "Rescue & MEDEVAC",
+      "fire": "Aerial firefighting",
+      "cargo": "Cargo & construction",
+      "vip": "VIP & transfers",
+      "scenic": "Scenic flight",
+      "film": "Film & photography",
+      "turnkey": "Turnkey project",
+      "other": "Other"
+    },
+    "datesTitle": "When do you need it?",
+    "dateStart": "Start date",
+    "dateEnd": "End date (optional)",
+    "flexibility": "Flexibility",
+    "flex": { "exact": "Exact date", "days": "± a few days", "flexible": "Flexible" },
+    "routeTitle": "Where, and what are we carrying?",
+    "origin": "Origin or operating area",
+    "destination": "Destination (optional)",
+    "pax": "Approx. passengers",
+    "cargo": "Approx. cargo (kg)",
+    "notes": "Anything else? (optional)",
+    "contactTitle": "How should we reach you?",
+    "reviewTitle": "Review your request",
+    "submit": "Send request",
+    "edit": "Edit",
+    "successTitle": "Received.",
+    "successBody": "A specialist will contact you within one business day. Your reference is {reference}.",
+    "successHome": "Back to home",
+    "noPrices": "We don't publish rates: every mission is quoted to measure."
+  },
+  "heli": {
+    "launcher": "Ask Heli",
+    "title": "Heli",
+    "subtitle": "Virtual assistant · AI",
+    "greeting": "Hi! I'm Heli, Helibol's virtual assistant ✈️ I'm an AI. How can I help you today?",
+    "chips": ["Get a quote", "Scenic flight", "Emergency", "Our fleet", "Talk to a person"],
+    "placeholder": "Type your message…",
+    "send": "Send",
+    "human": "Talk to a person",
+    "thinking": "Heli is typing…",
+    "error": "Sorry, something went wrong. You can call us on +591 3 352 9469 or email info@helibol.com.",
+    "rateLimited": "You've sent a lot of messages in a row. Please wait a few minutes or call +591 3 352 9469.",
+    "limit": "We've reached the limit for this conversation. To continue, talk to a person.",
+    "leadSaved": "Details sent · Ref. {reference}",
+    "emergencyCall": "Call Helibol 24/7",
+    "disclaimer": "Heli is an AI and can make mistakes. A specialist confirms prices, availability and times."
+  },
+  "consent": {
+    "text": "We use analytics cookies to improve the site. They only switch on if you accept.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "policy": "Privacy"
+  },
+  "notFound": {
+    "title": "This route isn't on our flight plan.",
+    "body": "The page you're looking for doesn't exist or has moved.",
+    "home": "Back to home"
+  }
+}

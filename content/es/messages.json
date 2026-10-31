@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "siteTitle": "Helibol — Servicios de helicópteros en Bolivia desde 1988",
+    "siteDescription": "Operador de helicópteros familiar con base en Santa Cruz de la Sierra. Energía y minería, rescate y MEDEVAC, combate de incendios, carga, VIP y vuelos panorámicos. Bell 212, Bell 412 y H125.",
+    "services": "Servicios de helicópteros",
+    "servicesDescription": "Energía y minería, rescate y MEDEVAC, combate de incendios, carga y construcción, VIP y vuelos panorámicos, cine y fotografía.",
+    "fleet": "Flota",
+    "fleetDescription": "Bell 212, Bell 412 y Airbus H125: la aeronave correcta para cada misión.",
+    "about": "Nosotros",
+    "aboutDescription": "Una empresa familiar que vuela desde 1988 desde el Hangar 22 de El Trompillo, Santa Cruz.",
+    "operations": "Operaciones",
+    "operationsDescription": "Más de 100 proyectos de exploración en Bolivia, Argentina y Perú.",
+    "scenic": "Vuelos panorámicos en helicóptero",
+    "scenicDescription": "Regala el cielo: vuelos panorámicos en helicóptero en Santa Cruz y Bolivia para cumpleaños, aniversarios, propuestas y más.",
+    "quote": "Solicitar cotización",
+    "quoteDescription": "Cuéntenos su misión y un especialista le contactará en menos de 24 horas hábiles.",
+    "contact": "Contacto",
+    "contactDescription": "Hangar 22, Aeropuerto El Trompillo, Santa Cruz de la Sierra. Emergencias 24/7: +591 3 352 9469.",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de uso"
+  },
+  "common": {
+    "skip": "Saltar al contenido",
+    "quote": "Solicitar cotización",
+    "talkToHeli": "Hablar con Heli",
+    "whatsapp": "WhatsApp",
+    "call": "Llamar",
+    "viewService": "Ver servicio",
+    "viewSpecs": "Ver ficha técnica",
+    "learnMore": "Conocer más",
+    "back": "Volver",
+    "next": "Siguiente",
+    "emergencyPill": "Emergencias 24/7",
+    "emergency": "¿Emergencia?",
+    "menu": "Menú",
+    "close": "Cerrar",
+    "language": "Idioma",
+    "view": "Ver",
+    "drag": "Arrastra",
+    "years": "años",
+    "since": "Desde 1988",
+    "liftOff": "Despegar"
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "fleet": "Flota",
+    "operations": "Operaciones",
+    "scenic": "Vuelos Panorámicos",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "quote": "Cotizar"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "VERTICAL EFFICIENCY · EST. 1988 · SANTA CRUZ, BOLIVIA",
+      "title": "Donde terminan los caminos, empezamos nosotros.",
+      "sub": "Desde 1988 llevamos personas, carga y ayuda a los rincones más remotos de Bolivia, con la experiencia de 38 años y el cuidado de una empresa familiar.",
+      "hud": "HANGAR 22 · EL TROMPILLO",
+      "altitude": "ALT",
+      "scroll": "Despegar"
+    },
+    "stats": {
+      "years": "años en el aire",
+      "projects": "proyectos de exploración",
+      "countries": "países operados",
+      "countriesNote": "Bolivia · Argentina · Perú",
+      "emergency": "respuesta a emergencias"
+    },
+    "marquee": [
+      "IOGP STANDARDS",
+      "AUDITADOS POR OPERADORAS INTERNACIONALES",
+      "BELL 212",
+      "BELL 412",
+      "H125",
+      "SAR",
+      "MEDEVAC",
+      "BAMBI BUCKET",
+      "LONG-LINE"
+    ],
+    "services": {
+      "eyebrow": "LO QUE HACEMOS",
+      "title": "Un helicóptero para cada misión.",
+      "lead": "Analizamos el terreno, la altura, la carga y el objetivo, y recomendamos la aeronave exacta. Nada más, nada menos."
+    },
+    "story": {
+      "eyebrow": "DESDE 1988",
+      "title": "Somos una empresa familiar. Volamos como tal.",
+      "body": "Helibol nació en 1988 en un hangar de El Trompillo con un Bell 47 y una convicción: que la distancia no debería dejar a nadie sin ayuda. Treinta y ocho años después, nuestros pilotos, técnicos y tripulantes siguen trabajando con la misma regla: cada persona que sube a bordo vuelve a casa. La tuya, y la nuestra.",
+      "link": "Conoce nuestra historia"
+    },
+    "fleet": {
+      "eyebrow": "FLOTA",
+      "title": "La flota correcta, lista para despegar.",
+      "bestFor": "Ideal para",
+      "turnkeyTitle": "Proyectos Turnkey",
+      "turnkeyBody": "¿Necesita su propia aeronave? Le ayudamos a encontrarla, evaluarla y traerla, con nuestra red internacional.",
+      "turnkeyCta": "Consultar"
+    },
+    "map": {
+      "eyebrow": "OPERACIONES",
+      "title": "Ya hemos estado ahí.",
+      "lead": "Más de 100 proyectos de exploración en Bolivia, Argentina y Perú. Estos son algunos de los más recientes.",
+      "base": "Base · Hangar 22",
+      "cta": "Ver todas las operaciones"
+    },
+    "safety": {
+      "eyebrow": "SEGURIDAD",
+      "title": "La seguridad no es un departamento. Es nuestra cultura.",
+      "pillars": [
+        {
+          "title": "Auditados internacionalmente",
+          "body": "Cumplimos estándares IOGP y somos auditados y aprobados por operadoras internacionales de primer nivel."
+        },
+        {
+          "title": "Tripulación experimentada",
+          "body": "Pilotos y técnicos con amplia experiencia en selva, altiplano y montaña."
+        },
+        {
+          "title": "Respuesta inmediata",
+          "body": "Técnicos, repuestos y asesoría a una llamada de distancia, con canales directos a nuestra red internacional."
+        },
+        {
+          "title": "Asesoría experta",
+          "body": "Le recomendamos la aeronave con la capacidad exacta que su misión necesita."
+        }
+      ],
+      "eco": "Nuestra operación long-line reduce la necesidad de construir helipuertos, cuidando el entorno donde trabajamos."
+    },
+    "scenic": {
+      "eyebrow": "VUELOS PANORÁMICOS",
+      "title": "Bolivia, como nunca la has visto.",
+      "body": "Cumpleaños, aniversarios, propuestas o simplemente el regalo de ver tu tierra desde el cielo. Vuelos panorámicos y traslados privados con tripulación profesional y toda la tranquilidad de 38 años de experiencia.",
+      "cta": "Reservar un vuelo"
+    },
+    "testimonials": {
+      "eyebrow": "TESTIMONIOS",
+      "title": "Lo que dicen quienes vuelan con nosotros."
+    },
+    "cta": {
+      "title": "Cuéntenos su misión. Nosotros nos encargamos del resto.",
+      "sub": "Respuesta en menos de 24 horas hábiles. Emergencias: 24/7."
+    }
+  },
+  "footer": {
+    "mission": "Personas, carga y ayuda a los rincones más remotos de Bolivia, desde 1988.",
+    "services": "Servicios",
+    "company": "Empresa",
+    "contact": "Contacto",
+    "map": "Ver en el mapa",
+    "rights": "Todos los derechos reservados.",
+    "badge": "38 AÑOS"
+  },
+  "servicesPage": {
+    "eyebrow": "SERVICIOS",
+    "title": "Un helicóptero para cada misión.",
+    "lead": "Seis líneas de servicio, una sola forma de trabajar: entender su misión y volar la aeronave exacta.",
+    "challenge": "El reto",
+    "how": "Cómo lo resolvemos",
+    "aircraft": "Aeronaves recomendadas",
+    "capabilities": "Capacidades",
+    "related": "Operación relacionada",
+    "faq": "Preguntas frecuentes",
+    "emergencyCall": "Llamar ahora · 24/7",
+    "proof": "100+ proyectos · Estándares IOGP"
+  },
+  "fleetPage": {
+    "eyebrow": "FLOTA",
+    "title": "La flota correcta, lista para despegar.",
+    "lead": "Tres plataformas probadas en selva, altiplano y montaña. Le recomendamos la que su misión necesita.",
+    "specs": "Especificaciones",
+    "metric": "Métrico",
+    "imperial": "Imperial",
+    "idealFor": "Ideal para",
+    "gallery": "Galería",
+    "request": "Solicitar esta aeronave",
+    "specsNote": "Datos de referencia. La capacidad real depende de altitud, temperatura y configuración; un especialista la confirma para su misión.",
+    "turnkeyTitle": "Proyectos Turnkey",
+    "turnkeyBody": "¿Necesita su propia aeronave? Le ayudamos a encontrarla, evaluarla y traerla, con nuestra red internacional.",
+    "turnkeyCta": "Consultar"
+  },
+  "aboutPage": {
+    "eyebrow": "NOSOTROS",
+    "title": "Una familia de aviadores, desde 1988.",
+    "lead": "Helibol nació en un hangar de El Trompillo con un Bell 47. Hoy es uno de los operadores de helicópteros más grandes de Bolivia, y sigue siendo una empresa familiar.",
+    "timelineTitle": "Nuestra historia",
+    "timeline": [
+      {
+        "year": "1988",
+        "title": "El primer vuelo",
+        "body": "Con un Bell 47 en el Hangar 22 de El Trompillo nace Helibol, con una convicción: la distancia no debería dejar a nadie sin ayuda."
+      },
+      {
+        "year": "Crecimiento",
+        "title": "El sector energético",
+        "body": "La exploración petrolera y minera nos lleva a la selva, el pie de monte y el altiplano. Sumamos aeronaves bimotor y estándares internacionales."
+      },
+      {
+        "year": "Región",
+        "title": "Argentina y Perú",
+        "body": "Nuestra experiencia cruza fronteras: apoyamos proyectos de exploración en Argentina y Perú."
+      },
+      {
+        "year": "Modernización",
+        "title": "Bell 412 y H125",
+        "body": "Incorporamos el Bell 412, con rotor de cuatro palas, y el Airbus H125, rey de las alturas."
+      },
+      {
+        "year": "2026",
+        "title": "38 años en el aire",
+        "body": "Más de 100 proyectos de exploración, rescates, incendios y miles de pasajeros que volvieron a casa."
+      }
+    ],
+    "valuesTitle": "Nuestros valores",
+    "values": [
+      { "title": "Seguridad", "body": "Cada persona que sube a bordo vuelve a casa." },
+      { "title": "Precisión", "body": "La aeronave exacta, el plan exacto, cada vez." },
+      { "title": "Familia", "body": "Tratamos a clientes y tripulación como a los nuestros." },
+      { "title": "Servicio", "body": "Una llamada de distancia, 24/7." }
+    ],
+    "peopleTitle": "Nuestra gente",
+    "peopleBody": "Pilotos, técnicos y tripulantes que conocen Bolivia desde el aire. Detrás de cada vuelo hay un equipo que trabaja en tierra para que todo salga bien.",
+    "certTitle": "Estándares y auditorías",
+    "certs": ["Estándares IOGP", "Auditados por operadoras internacionales", "Línea de emergencias 24/7"],
+    "visitTitle": "Visítenos en el Hangar 22",
+    "visitBody": "Aeropuerto El Trompillo, Santa Cruz de la Sierra, Bolivia."
+  },
+  "operationsPage": {
+    "eyebrow": "OPERACIONES",
+    "title": "Ya hemos estado ahí.",
+    "lead": "Más de 100 proyectos de exploración en Bolivia, Argentina y Perú. Una selección de los más recientes.",
+    "all": "Todos",
+    "year": "Año",
+    "region": "Región",
+    "sector": "Sector",
+    "energy": "Energía y minería",
+    "empty": "No hay proyectos con estos filtros.",
+    "count": "{count, plural, one {# proyecto} other {# proyectos}}"
+  },
+  "scenicPage": {
+    "eyebrow": "VUELOS PANORÁMICOS",
+    "title": "Regala el cielo.",
+    "lead": "Bolivia desde arriba, con tu familia, tu pareja o tu equipo. Vuelos a pedido con tripulación profesional y 38 años de experiencia.",
+    "occasionsTitle": "Para cada ocasión",
+    "occasions": [
+      { "title": "Cumpleaños", "body": "Un regalo que nadie olvida." },
+      { "title": "Aniversario", "body": "Celebre desde las alturas." },
+      { "title": "Propuesta", "body": "La pregunta más importante, con la mejor vista." },
+      { "title": "Corporativo", "body": "Premie a su equipo o reciba a sus invitados." },
+      { "title": "Fotografía", "body": "Tomas aéreas para recuerdos o proyectos." }
+    ],
+    "howTitle": "Cómo funciona",
+    "how": [
+      { "title": "Elija", "body": "Cuéntenos la ocasión, la fecha y cuántas personas vuelan." },
+      {
+        "title": "Confirmamos clima y ruta",
+        "body": "Un especialista confirma la aeronave, la ruta y las condiciones."
+      },
+      { "title": "Vuele", "body": "Briefing de seguridad, despegue y a disfrutar." }
+    ],
+    "safetyTitle": "Tranquilidad en cada minuto",
+    "safetyBody": "Antes de despegar, la tripulación le explica todo: cómo subir, dónde sentarse y qué esperar. Si el clima no acompaña, reprogramamos.",
+    "faqTitle": "Preguntas frecuentes",
+    "faqs": [
+      {
+        "q": "¿Hay límites de peso?",
+        "a": "Sí. Por seguridad y balance de la aeronave, le pediremos el peso aproximado de cada pasajero al reservar."
+      },
+      {
+        "q": "¿Pueden volar niños?",
+        "a": "Sí, acompañados de un adulto. Un especialista le indicará las condiciones al reservar."
+      },
+      {
+        "q": "¿Qué debo vestir?",
+        "a": "Ropa cómoda, calzado cerrado y nada que pueda volarse con el viento, como sombreros o pañuelos sueltos."
+      },
+      {
+        "q": "¿Qué pasa si el clima es malo?",
+        "a": "La seguridad es primero. Si las condiciones no son adecuadas, reprogramamos su vuelo sin complicaciones."
+      },
+      {
+        "q": "¿Ofrecen certificados de regalo?",
+        "a": "Consúltenos. Podemos preparar un vuelo como regalo para una fecha especial."
+      }
+    ],
+    "cta": "Consultar disponibilidad",
+    "noPrices": "Cada vuelo se arma a pedido. Un especialista le confirma disponibilidad y costo."
+  },
+  "contactPage": {
+    "eyebrow": "CONTACTO",
+    "title": "Hablemos de su misión.",
+    "lead": "Respuesta en menos de 24 horas hábiles. Emergencias: 24/7.",
+    "phone": "Teléfono",
+    "email": "Correo",
+    "visit": "Visítenos",
+    "emergencyTitle": "¿Es una emergencia?",
+    "emergencyBody": "Llame de inmediato a nuestra línea 24/7. Si hay riesgo de vida, llame también a los servicios de emergencia locales.",
+    "formTitle": "Envíenos un mensaje"
+  },
+  "form": {
+    "name": "Nombre completo",
+    "company": "Empresa (opcional)",
+    "email": "Correo electrónico",
+    "phone": "Teléfono / WhatsApp",
+    "message": "Mensaje",
+    "language": "Idioma preferido",
+    "send": "Enviar",
+    "sending": "Enviando…",
+    "consent": "Acepto que Helibol use estos datos para responder a mi solicitud, según la política de privacidad.",
+    "success": "Recibido. Un especialista le contactará en menos de 24 horas hábiles.",
+    "error": "No pudimos enviar su mensaje. Inténtelo de nuevo o escríbanos a info@helibol.com.",
+    "required": "Campo obligatorio",
+    "invalidEmail": "Correo no válido",
+    "contactRequired": "Indique un correo o un teléfono"
+  },
+  "quote": {
+    "eyebrow": "COTIZAR",
+    "title": "Cuéntenos su misión.",
+    "lead": "Cinco pasos, menos de dos minutos. Un especialista le contactará en menos de 24 horas hábiles.",
+    "step": "Paso {current} de {total}",
+    "steps": ["Misión", "Fechas", "Ruta y carga", "Contacto", "Revisión"],
+    "missionTitle": "¿Qué tipo de misión es?",
+    "types": {
+      "energy": "Energía y minería",
+      "rescue": "Rescate y MEDEVAC",
+      "fire": "Combate de incendios",
+      "cargo": "Carga y construcción",
+      "vip": "VIP y traslados",
+      "scenic": "Vuelo panorámico",
+      "film": "Cine y fotografía",
+      "turnkey": "Proyecto Turnkey",
+      "other": "Otro"
+    },
+    "datesTitle": "¿Cuándo la necesita?",
+    "dateStart": "Fecha de inicio",
+    "dateEnd": "Fecha de fin (opcional)",
+    "flexibility": "Flexibilidad",
+    "flex": { "exact": "Fecha exacta", "days": "± unos días", "flexible": "Flexible" },
+    "routeTitle": "¿Dónde y qué llevamos?",
+    "origin": "Origen o zona de operación",
+    "destination": "Destino (opcional)",
+    "pax": "Pasajeros aprox.",
+    "cargo": "Carga aprox. (kg)",
+    "notes": "Detalles adicionales (opcional)",
+    "contactTitle": "¿Cómo le contactamos?",
+    "reviewTitle": "Revise su solicitud",
+    "submit": "Enviar solicitud",
+    "edit": "Editar",
+    "successTitle": "Recibido.",
+    "successBody": "Un especialista le contactará en menos de 24 horas hábiles. Su referencia es {reference}.",
+    "successHome": "Volver al inicio",
+    "noPrices": "No publicamos tarifas: cada misión se cotiza a medida."
+  },
+  "heli": {
+    "launcher": "Pregúntale a Heli",
+    "title": "Heli",
+    "subtitle": "Asistente virtual · IA",
+    "greeting": "¡Hola! Soy Heli, la asistente virtual de Helibol ✈️ Soy una inteligencia artificial. ¿En qué le puedo ayudar hoy?",
+    "chips": [
+      "Cotizar un vuelo",
+      "Vuelo panorámico",
+      "Emergencia",
+      "Nuestra flota",
+      "Hablar con una persona"
+    ],
+    "placeholder": "Escriba su mensaje…",
+    "send": "Enviar",
+    "human": "Hablar con una persona",
+    "thinking": "Heli está escribiendo…",
+    "error": "Perdón, tuve un problema. Puede llamarnos al +591 3 352 9469 o escribir a info@helibol.com.",
+    "rateLimited": "Ha enviado muchos mensajes seguidos. Espere unos minutos o llámenos al +591 3 352 9469.",
+    "limit": "Hemos llegado al límite de esta conversación. Para continuar, hable con una persona.",
+    "leadSaved": "Datos enviados · Ref. {reference}",
+    "emergencyCall": "Llamar a Helibol 24/7",
+    "disclaimer": "Heli es una IA y puede equivocarse. Un especialista confirma precios, disponibilidad y horarios."
+  },
+  "consent": {
+    "text": "Usamos cookies de analítica para mejorar el sitio. Solo se activan si usted acepta.",
+    "accept": "Aceptar",
+    "decline": "Rechazar",
+    "policy": "Privacidad"
+  },
+  "notFound": {
+    "title": "Esta ruta no está en nuestro plan de vuelo.",
+    "body": "La página que busca no existe o cambió de lugar.",
+    "home": "Volver al inicio"
+  }
+}
