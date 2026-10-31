@@ -12,6 +12,10 @@ type Props = {
   activeId: string | null;
   onSelect: (id: string) => void;
   onHover: (h: { id: string; x: number; y: number } | null) => void;
+  /** Wheel/pinch zoom. Off on the home page so the wheel keeps scrolling the page. */
+  zoom?: boolean;
+  /** Camera distance for the overview and for a focused marker. */
+  distances?: { overview: number; focus: number };
 };
 
 const R = 1;
@@ -413,6 +417,8 @@ function Scene({
   onSelect,
   onHover,
   interactive,
+  zoom = true,
+  distances = { overview: 3.05, focus: 2.15 },
 }: Props & { interactive: boolean }) {
   const baseVec = useMemo(() => latLngToVec(base.lat, base.lng, 1.004), [base.lat, base.lng]);
   const ends = useMemo(
@@ -438,13 +444,13 @@ function Scene({
         <Marker key={m.id} m={m} active={m.id === activeId} onSelect={onSelect} onHover={onHover} />
       ))}
       <Base lat={base.lat} lng={base.lng} />
-      <CameraRig focus={focus} distance={active ? 2.15 : 3.05} />
+      <CameraRig focus={focus} distance={active ? distances.focus : distances.overview} />
       {/* Touch devices: no drag-to-rotate, so the page keeps scrolling; scroll and taps drive the globe. */}
       {interactive && (
         <OrbitControls
           makeDefault
           enablePan={false}
-          enableZoom
+          enableZoom={zoom}
           minDistance={1.5}
           maxDistance={3.8}
           rotateSpeed={0.45}

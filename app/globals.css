@@ -162,6 +162,12 @@ html[data-preloaded] [data-preloader] {
 
 /* Hero entry runs in CSS so it starts at first paint, not after hydration (LCP).
    On a first visit the preloader is up, so delays shift until its curtain lifts. */
+@keyframes hb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes hb-rise {
   from {
     transform: translateY(110%);

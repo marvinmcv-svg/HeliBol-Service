@@ -55,12 +55,13 @@ export function FleetShowroom() {
     <section ref={ref} className="relative bg-white">
       <div
         data-stage
-        className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden pt-24 pb-12 lg:py-16"
+        className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden pt-24 pb-12 lg:h-[100svh] lg:pt-[max(6.5rem,13svh)] lg:pb-[max(1.5rem,4svh)]"
       >
         <div aria-hidden className="hairline-grid-light absolute inset-0" />
-        <div className="container-hb relative">
+        {/* Desktop: everything fits one viewport while pinned — header on top, the stage takes the rest. */}
+        <div className="container-hb relative lg:flex lg:min-h-0 lg:flex-1 lg:flex-col">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <SectionHeader eyebrow={t("eyebrow")} title={t("title")} />
+            <SectionHeader eyebrow={t("eyebrow")} title={t("title")} compact />
             <div role="tablist" aria-label={t("eyebrow")} className="flex gap-2">
               {fleet.map((f, i) => (
                 <button
@@ -82,7 +83,7 @@ export function FleetShowroom() {
             </div>
           </div>
 
-          <div className="relative mt-10 grid items-center gap-10 lg:grid-cols-[1.4fr_1fr]">
+          <div className="relative mt-10 grid items-center gap-10 lg:mt-[max(1rem,3svh)] lg:min-h-0 lg:flex-1 lg:grid-cols-[1.4fr_1fr] lg:gap-14">
             {/* Giant outlined model name */}
             <AnimatePresence mode="popLayout">
               <motion.p
@@ -92,13 +93,16 @@ export function FleetShowroom() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -60 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="text-outline pointer-events-none absolute -top-6 left-0 font-display text-[18vw] leading-none font-semibold whitespace-nowrap select-none [--stroke:rgb(28_117_188/0.35)] lg:text-[13vw]"
+                className="text-outline pointer-events-none absolute -top-6 left-0 font-display text-[18vw] leading-none font-semibold whitespace-nowrap select-none [--stroke:rgb(28_117_188/0.35)] lg:top-0 lg:text-[min(13vw,24svh)]"
               >
                 {a.model.replace("Airbus ", "")}
               </motion.p>
             </AnimatePresence>
 
-            <div className="relative aspect-[16/10]" data-cursor="view">
+            <div
+              className="relative aspect-[16/10] lg:aspect-auto lg:h-full lg:max-h-[62svh]"
+              data-cursor="view"
+            >
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.div
                   key={a.slug}
@@ -149,27 +153,31 @@ export function FleetShowroom() {
                   transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <p className="eyebrow text-hb-blue-ink">{a.variants}</p>
-                  <h3 className="mt-3 text-4xl font-medium tracking-tight">{a.model}</h3>
-                  <p className="mt-1 font-display text-xl text-ink-soft">“{a.nickname[locale]}”</p>
-                  <dl className="mt-8 divide-y divide-line border-y border-line">
+                  <h3 className="mt-3 text-4xl font-medium tracking-tight lg:text-[clamp(1.75rem,5svh,2.25rem)]">
+                    {a.model}
+                  </h3>
+                  <p className="mt-1 font-display text-xl text-ink-soft lg:text-[clamp(1rem,2.6svh,1.25rem)]">
+                    “{a.nickname[locale]}”
+                  </p>
+                  <dl className="mt-8 divide-y divide-line border-y border-line lg:mt-[max(1rem,3svh)]">
                     {a.specs.map((s) => (
                       <motion.div
                         layout
                         key={s.key}
-                        className="flex items-baseline justify-between gap-6 py-3"
+                        className="flex items-baseline justify-between gap-6 py-3 lg:py-[clamp(0.35rem,1.3svh,0.75rem)]"
                       >
                         <dt className="text-sm text-ink-soft">{s.label[locale]}</dt>
                         <dd className="tabular text-right font-medium">{formatSpec(s, "metric", locale)}</dd>
                       </motion.div>
                     ))}
                   </dl>
-                  <p className="mt-5 text-sm text-ink-soft">
+                  <p className="mt-5 text-sm text-ink-soft lg:mt-[max(0.75rem,2svh)]">
                     <span className="font-semibold text-ink">{t("bestFor")}:</span>{" "}
                     {a.bestFor[locale].join(" · ")}
                   </p>
                   <Link
                     href={`/flota/${a.slug}`}
-                    className="group mt-8 inline-flex items-center gap-2 font-semibold text-hb-blue"
+                    className="group mt-8 inline-flex items-center gap-2 font-semibold text-hb-blue lg:mt-[max(0.75rem,2.5svh)]"
                   >
                     {tc("viewSpecs")}{" "}
                     <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />

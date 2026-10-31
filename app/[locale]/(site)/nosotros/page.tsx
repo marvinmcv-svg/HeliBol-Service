@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ShieldCheck, Crosshair, Heart, Headset, BadgeCheck, MapPin } from "lucide-react";
+import { BadgeCheck, MapPin } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Reveal } from "@/components/motion/Reveal";
 import { RevealImage } from "@/components/motion/RevealImage";
-import { TiltCard } from "@/components/motion/TiltCard";
 import { Timeline } from "@/components/sections/Timeline";
+import { ValuesDeck } from "@/components/sections/ValuesDeck";
 import { TeamSpotlight } from "@/components/sections/TeamSpotlight";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { WingBadge } from "@/components/ui/WingBadge";
@@ -14,8 +13,6 @@ import { img, video } from "@/content/media";
 import { site, yearsFlying } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
-
-const valueIcons = [ShieldCheck, Crosshair, Heart, Headset];
 
 export async function generateMetadata({
   params,
@@ -70,22 +67,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div aria-hidden className="hairline-grid absolute inset-0" />
         <div className="container-hb relative">
           <SectionHeader eyebrow={t("valuesTitle").toUpperCase()} title={t("valuesTitle")} dark />
-          <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((v, i) => {
-              const Icon = valueIcons[i] ?? ShieldCheck;
-              return (
-                <Reveal as="li" key={v.title} delay={i * 0.08}>
-                  <TiltCard className="h-full">
-                    <div className="glass h-full rounded-[24px] p-7">
-                      <Icon className="size-6 text-hb-sunset" aria-hidden />
-                      <h3 className="mt-6 text-2xl font-medium">{v.title}</h3>
-                      <p className="mt-2 text-white/70">{v.body}</p>
-                    </div>
-                  </TiltCard>
-                </Reveal>
-              );
-            })}
-          </ul>
+          <div className="mt-14">
+            <ValuesDeck values={values} />
+          </div>
         </div>
       </section>
 

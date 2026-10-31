@@ -26,7 +26,8 @@ export function ServicesRail() {
       mm.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", () => {
         const root = ref.current!;
         const track = root.querySelector<HTMLElement>("[data-track]")!;
-        const distance = () => track.scrollWidth - window.innerWidth + 48;
+        // Travel until the last card's right edge sits a gutter in from the viewport edge.
+        const distance = () => Math.max(0, track.scrollWidth - window.innerWidth);
         const tween = gsap.to(track, {
           x: () => -distance(),
           ease: "none",
@@ -68,11 +69,18 @@ export function ServicesRail() {
     <section ref={ref} id="servicios" className="relative bg-hb-night text-white">
       <div
         data-pin
-        className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden py-24 lg:py-0"
+        className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden py-24 lg:h-[100svh] lg:justify-start lg:pt-[max(6.5rem,13svh)] lg:pb-[max(2rem,5svh)]"
       >
         <div aria-hidden className="hairline-grid absolute inset-0 opacity-50" />
         <div className="container-hb relative flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <SectionHeader eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} dark />
+          <SectionHeader
+            eyebrow={t("eyebrow")}
+            title={t("title")}
+            lead={t("lead")}
+            dark
+            compact
+            leadClassName="[@media(min-width:1024px)_and_(max-height:760px)]:hidden"
+          />
           <div className="hidden w-64 shrink-0 lg:block">
             <div className="eyebrow mb-3 flex justify-between text-white/50">
               <span>01</span>
@@ -85,18 +93,26 @@ export function ServicesRail() {
         </div>
 
         <div
-          className="relative mt-12 overflow-x-auto overscroll-x-contain lg:overflow-visible [&::-webkit-scrollbar]:hidden"
+          className="relative mt-12 overflow-x-auto overscroll-x-contain lg:mt-[max(1.5rem,4svh)] lg:min-h-0 lg:flex-1 lg:overflow-visible [&::-webkit-scrollbar]:hidden"
           data-cursor="drag"
         >
-          <ul data-track className="flex w-max snap-x snap-mandatory gap-5 px-5 sm:px-8 lg:gap-8 lg:px-12">
+          <ul
+            data-track
+            className="flex w-max snap-x snap-mandatory gap-5 px-5 sm:px-8 lg:h-full lg:gap-8 lg:px-12"
+          >
             {services.map((s) => {
               const image = img(s.card);
               return (
-                <li key={s.slug} className="w-[82vw] shrink-0 snap-start sm:w-[60vw] lg:w-[38vw] xl:w-[34vw]">
+                // Desktop: the card takes the full height left under the header and its width follows
+                // from 4:5, so the whole image (and its copy) is always on screen while pinned.
+                <li
+                  key={s.slug}
+                  className="w-[82vw] shrink-0 snap-start sm:w-[60vw] lg:aspect-[4/5] lg:h-full lg:w-auto lg:max-w-[42vw]"
+                >
                   <TiltCard className="h-full">
                     <Link
                       href={`/servicios/${s.slug}`}
-                      className="group relative block aspect-[4/5] overflow-hidden rounded-[24px] bg-hb-blue-deep lg:aspect-[5/6]"
+                      className="group relative block aspect-[4/5] overflow-hidden rounded-[24px] bg-hb-blue-deep lg:aspect-auto lg:h-full"
                       data-cursor="view"
                     >
                       <div data-panel-img className="absolute -inset-x-[14%] inset-y-0">
@@ -121,7 +137,7 @@ export function ServicesRail() {
                       >
                         <span className="eyebrow tabular text-hb-sunset">{s.index} / 06</span>
                         <div>
-                          <h3 className="text-3xl font-medium tracking-tight sm:text-4xl">
+                          <h3 className="text-3xl font-medium tracking-tight sm:text-4xl lg:text-[clamp(1.75rem,4svh,2.5rem)]">
                             {s.title[locale]}
                           </h3>
                           <p className="mt-3 max-w-sm text-white/75">{s.line[locale]}</p>
