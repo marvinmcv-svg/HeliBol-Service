@@ -2,7 +2,10 @@
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import { useLayoutEffect, useRef, useState } from "react";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { gsap, useGSAP } from "@/lib/gsap";
+
+if (typeof window !== "undefined") gsap.registerPlugin(MotionPathPlugin);
 import { img, type ImageKey } from "@/content/media";
 import { cn } from "@/lib/utils";
 
