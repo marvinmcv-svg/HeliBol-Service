@@ -88,12 +88,41 @@ const alts = {
 
 export type ImageKey = keyof typeof alts;
 
-export type Img = { src: string; width: number; height: number; blurDataURL: string; alt: Localized };
+/** Focal points (CSS object-position) so cover-cropped images keep the aircraft in frame. */
+const focus: Partial<Record<keyof typeof alts, string>> = {
+  "h125-plateau": "50% 68%",
+  "h125-longline": "72% 40%",
+  "bell412-belly": "50% 45%",
+  "scenic-waterfall": "50% 78%",
+  "ramp-dusk": "50% 60%",
+  "cargo-pair": "50% 40%",
+  "rescue-skid": "50% 40%",
+  "heritage-bell47": "50% 55%",
+  "bell212-blue-sky": "45% 55%",
+  "bell412-golden-hour": "45% 55%",
+};
+
+export type Img = {
+  src: string;
+  width: number;
+  height: number;
+  blurDataURL: string;
+  alt: Localized;
+  /** CSS object-position for cover crops. */
+  position: string;
+};
 
 export function img(key: ImageKey): Img {
   const b = (blur as Record<string, { w: number; h: number; blur: string }>)[key];
   if (!b) throw new Error(`Missing media: ${key} — run pnpm media`);
-  return { src: `/media/img/${key}.jpg`, width: b.w, height: b.h, blurDataURL: b.blur, alt: alts[key] };
+  return {
+    src: `/media/img/${key}.jpg`,
+    width: b.w,
+    height: b.h,
+    blurDataURL: b.blur,
+    alt: alts[key],
+    position: focus[key] ?? "50% 50%",
+  };
 }
 
 export const cutout = {

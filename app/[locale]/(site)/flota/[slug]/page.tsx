@@ -5,8 +5,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Eyebrow } from "@/components/motion/Eyebrow";
 import { SplitHeading } from "@/components/motion/SplitHeading";
 import { Reveal } from "@/components/motion/Reveal";
-import { RevealImage } from "@/components/motion/RevealImage";
 import { SpecTable } from "@/components/sections/SpecTable";
+import { FleetGallery } from "@/components/sections/FleetGallery";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Button } from "@/components/ui/Button";
 import { HeliButton } from "@/components/ui/HeliButton";
@@ -117,6 +117,7 @@ export default async function AircraftPage({
                   placeholder="blur"
                   blurDataURL={hero.blurDataURL}
                   className="object-cover"
+                  style={{ objectPosition: hero.position }}
                 />
               </div>
             )}
@@ -126,22 +127,14 @@ export default async function AircraftPage({
 
       <section className="bg-white py-24 lg:py-32">
         <div className="container-hb grid gap-16 lg:grid-cols-[1fr_1.2fr]">
-          <SpecTable specs={a.specs} />
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <SpecTable specs={a.specs} />
+          </div>
           <div>
             <h2 className="eyebrow font-sans text-hb-blue-ink">{t("gallery")}</h2>
-            <ul className="mt-6 grid grid-cols-2 gap-4">
-              {a.gallery.map((key, i) => (
-                <li
-                  key={key}
-                  className={`relative overflow-hidden rounded-[20px] ${i === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"}`}
-                >
-                  <RevealImage
-                    image={img(key)}
-                    sizes={i === 0 ? "(min-width:1024px) 50vw, 100vw" : "(min-width:1024px) 25vw, 50vw"}
-                  />
-                </li>
-              ))}
-            </ul>
+            <div className="mt-6">
+              <FleetGallery images={a.gallery.map((key) => img(key))} />
+            </div>
           </div>
         </div>
       </section>

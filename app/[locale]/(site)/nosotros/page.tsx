@@ -7,8 +7,8 @@ import { Reveal } from "@/components/motion/Reveal";
 import { RevealImage } from "@/components/motion/RevealImage";
 import { TiltCard } from "@/components/motion/TiltCard";
 import { Timeline } from "@/components/sections/Timeline";
+import { TeamSpotlight } from "@/components/sections/TeamSpotlight";
 import { CtaBand } from "@/components/sections/CtaBand";
-import { VideoLoop } from "@/components/ui/VideoLoop";
 import { WingBadge } from "@/components/ui/WingBadge";
 import { img, video } from "@/content/media";
 import { site, yearsFlying } from "@/content/site";
@@ -32,6 +32,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   setRequestLocale(locale);
   const t = await getTranslations("aboutPage");
   const tf = await getTranslations("footer");
+  const tc = await getTranslations("common");
+  const people = t.raw("people") as { role: string; tag: string; body: string }[];
   const timeline = t.raw("timeline") as { year: string; title: string; body: string }[];
   const values = t.raw("values") as { title: string; body: string }[];
   const certs = t.raw("certs") as string[];
@@ -39,7 +41,17 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <>
-      <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} image={img("bell212-blue-sky")}>
+      <PageHero
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        lead={t("lead")}
+        image={img("bell212-blue-sky")}
+        video={{
+          desktop: video.heroDesktop,
+          mobile: video.heroMobile,
+          label: { pause: tc("pauseVideo"), play: tc("playVideo") },
+        }}
+      >
         <WingBadge
           years={yearsFlying}
           label={tf("badge").replace(/^\d+\s*/, "")}
@@ -77,27 +89,22 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      <section className="bg-hb-sky py-24 lg:py-32">
-        <div className="container-hb grid items-center gap-14 lg:grid-cols-2">
-          <div className="relative aspect-[16/11] overflow-hidden rounded-[28px]">
-            <RevealImage image={img("team-hangar")} sizes="(min-width:1024px) 50vw, 100vw" parallax={6} />
-          </div>
-          <div>
+      <section className="relative overflow-hidden bg-hb-sky py-24 lg:py-32">
+        <div aria-hidden className="hairline-grid-light absolute inset-0" />
+        <div className="container-hb relative">
+          <div className="grid items-end gap-10 lg:grid-cols-[1.2fr_1fr]">
             <SectionHeader
               eyebrow={t("peopleTitle").toUpperCase()}
               title={t("peopleTitle")}
               lead={t("peopleBody")}
             />
-            <Reveal delay={0.15}>
-              <div className="mt-8 grid grid-cols-2 gap-4">
-                <div className="relative aspect-[9/16] max-h-80 overflow-hidden rounded-[20px]">
-                  <VideoLoop {...video.crew} className="absolute inset-0 size-full" />
-                </div>
-                <div className="relative aspect-[3/4] max-h-80 self-end overflow-hidden rounded-[20px]">
-                  <RevealImage image={img("rescue-crew")} sizes="25vw" />
-                </div>
-              </div>
-            </Reveal>
+            <div className="relative hidden aspect-[16/9] overflow-hidden rounded-[28px] lg:block">
+              <RevealImage image={img("team-hangar")} sizes="40vw" parallax={6} />
+            </div>
+          </div>
+          <p className="eyebrow mt-12 text-ink-mute">{t("peopleHint")}</p>
+          <div className="mt-6 lg:pb-12">
+            <TeamSpotlight people={people} />
           </div>
         </div>
       </section>

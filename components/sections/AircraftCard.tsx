@@ -32,6 +32,7 @@ export function AircraftCard({
             placeholder="blur"
             blurDataURL={image.blurDataURL}
             className="object-cover transition-transform duration-700 group-hover:scale-105"
+            style={{ objectPosition: image.position }}
           />
         </div>
         <div className="flex flex-1 flex-col p-7" style={{ transform: "translateZ(30px)" }}>

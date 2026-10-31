@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageHero } from "@/components/ui/PageHero";
 import { AircraftCard } from "@/components/sections/AircraftCard";
+import { FleetCompare } from "@/components/sections/FleetCompare";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Button } from "@/components/ui/Button";
@@ -27,7 +28,7 @@ export default async function FleetPage({ params }: { params: Promise<{ locale: 
   const tc = await getTranslations("common");
   return (
     <>
-      <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} image={img("bell412-belly")} />
+      <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} image={img("bell412-white-sky")} />
       <section className="bg-hb-sky py-24 lg:py-32">
         <ul className="container-hb grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {fleet.map((a, i) => (
@@ -37,6 +38,11 @@ export default async function FleetPage({ params }: { params: Promise<{ locale: 
           ))}
         </ul>
         <div className="container-hb mt-14">
+          <Reveal>
+            <FleetCompare />
+          </Reveal>
+        </div>
+        <div className="container-hb mt-6">
           <div className="flex flex-col gap-4 rounded-[24px] border border-line bg-white p-8 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="font-display text-2xl font-medium">{t("turnkeyTitle")}</p>

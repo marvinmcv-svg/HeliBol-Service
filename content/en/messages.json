@@ -39,7 +39,9 @@
     "drag": "Drag",
     "years": "years",
     "since": "Since 1988",
-    "liftOff": "Lift off"
+    "liftOff": "Lift off",
+    "pauseVideo": "Pause background video",
+    "playVideo": "Play background video"
   },
   "nav": {
     "home": "Home",
@@ -177,7 +179,13 @@
     "specsNote": "Reference figures. Real capacity depends on altitude, temperature and configuration; a specialist confirms it for your mission.",
     "turnkeyTitle": "Turnkey Projects",
     "turnkeyBody": "Need your own aircraft? We'll help you source, inspect and import it through our international network.",
-    "turnkeyCta": "Enquire"
+    "turnkeyCta": "Enquire",
+    "openGallery": "Open gallery",
+    "photo": "Photo {current} of {total}",
+    "prev": "Previous",
+    "next": "Next",
+    "close": "Close",
+    "compare": "At a glance"
   },
   "aboutPage": {
     "eyebrow": "ABOUT",
@@ -213,17 +221,52 @@
     ],
     "valuesTitle": "Our values",
     "values": [
-      { "title": "Safety", "body": "Everyone who comes aboard comes home." },
-      { "title": "Precision", "body": "The exact aircraft, the exact plan, every time." },
-      { "title": "Family", "body": "We treat clients and crew like our own." },
-      { "title": "Service", "body": "One call away, 24/7." }
+      {
+        "title": "Safety",
+        "body": "Everyone who comes aboard comes home."
+      },
+      {
+        "title": "Precision",
+        "body": "The exact aircraft, the exact plan, every time."
+      },
+      {
+        "title": "Family",
+        "body": "We treat clients and crew like our own."
+      },
+      {
+        "title": "Service",
+        "body": "One call away, 24/7."
+      }
     ],
     "peopleTitle": "Our people",
     "peopleBody": "Pilots, engineers and crew who know Bolivia from the air. Behind every flight is a team on the ground making sure it goes right.",
     "certTitle": "Standards and audits",
     "certs": ["IOGP standards", "Audited by international operators", "24/7 emergency line"],
     "visitTitle": "Visit us at Hangar 22",
-    "visitBody": "El Trompillo Airport, Santa Cruz de la Sierra, Bolivia."
+    "visitBody": "El Trompillo Airport, Santa Cruz de la Sierra, Bolivia.",
+    "people": [
+      {
+        "role": "Pilots",
+        "tag": "Flight operations",
+        "body": "Captains at home in the jungle, the Chaco and the altiplano. High, hot and remote is a normal day at the office."
+      },
+      {
+        "role": "Maintenance engineers",
+        "tag": "Hangar 22",
+        "body": "Licensed engineers who keep every aircraft airworthy, inspection after inspection, mission after mission."
+      },
+      {
+        "role": "Rescue crew",
+        "tag": "24/7 response",
+        "body": "Crews trained to secure, load and care for patients from the field to the hospital door."
+      },
+      {
+        "role": "Operations & dispatch",
+        "tag": "Mission control",
+        "body": "The team behind the 24/7 line: planning, fuel, permits and flight following for every sortie."
+      }
+    ],
+    "peopleHint": "Hover or tap to meet the team"
   },
   "operationsPage": {
     "eyebrow": "OPERATIONS",
@@ -235,7 +278,18 @@
     "sector": "Sector",
     "energy": "Energy & mining",
     "empty": "No projects match these filters.",
-    "count": "{count, plural, one {# project} other {# projects}}"
+    "count": "{count, plural, one {# project} other {# projects}}",
+    "globeTitle": "Mission log",
+    "globeLead": "Drag the globe or tap a marker. Each card below is a documented campaign flown from our base at El Trompillo.",
+    "statProjects": "Exploration projects",
+    "statCountries": "Countries",
+    "statSince": "Flying since",
+    "countriesNote": "Bolivia · Argentina · Peru",
+    "distance": "{km} km from base",
+    "viewOnGlobe": "Show on globe",
+    "base": "Home base",
+    "selection": "A documented selection from 100+ projects. Full archive available on request.",
+    "drag": "Drag to rotate"
   },
   "scenicPage": {
     "eyebrow": "SCENIC FLIGHTS",
@@ -243,20 +297,46 @@
     "lead": "Bolivia from above, with your family, your partner or your team. Flights on request with professional crews and 38 years of experience.",
     "occasionsTitle": "For every occasion",
     "occasions": [
-      { "title": "Birthday", "body": "A gift no one forgets." },
-      { "title": "Anniversary", "body": "Celebrate from above." },
-      { "title": "Proposal", "body": "The biggest question, with the best view." },
-      { "title": "Corporate", "body": "Reward your team or host your guests." },
-      { "title": "Photography", "body": "Aerial shots for memories or projects." }
+      {
+        "title": "Birthday",
+        "body": "A gift no one forgets. Lift off at golden hour and toast the view over Santa Cruz.",
+        "tag": "Gift the sky"
+      },
+      {
+        "title": "Anniversary",
+        "body": "Celebrate from above: waterfalls, red canyons and a quiet cabin for two.",
+        "tag": "For two"
+      },
+      {
+        "title": "Proposal",
+        "body": "The biggest question, with the best view. We'll help you plan the landing spot and the timing.",
+        "tag": "Say yes"
+      },
+      {
+        "title": "Corporate",
+        "body": "Reward your team, host your guests or move executives between sites, on your schedule.",
+        "tag": "Teams & guests"
+      },
+      {
+        "title": "Photography",
+        "body": "Doors-off aerial shots for memories, real estate or film, with a crew that knows the angles.",
+        "tag": "Aerial imaging"
+      }
     ],
     "howTitle": "How it works",
     "how": [
-      { "title": "Choose", "body": "Tell us the occasion, the date and how many people are flying." },
+      {
+        "title": "Choose",
+        "body": "Tell us the occasion, the date and how many people are flying."
+      },
       {
         "title": "We confirm weather and route",
         "body": "A specialist confirms the aircraft, the route and the conditions."
       },
-      { "title": "Fly", "body": "Safety briefing, lift-off, and enjoy." }
+      {
+        "title": "Fly",
+        "body": "Safety briefing, lift-off, and enjoy."
+      }
     ],
     "safetyTitle": "Peace of mind, every minute",
     "safetyBody": "Before take-off, the crew walks you through everything: how to board, where to sit and what to expect. If the weather isn't right, we reschedule.",
@@ -284,18 +364,69 @@
       }
     ],
     "cta": "Check availability",
-    "noPrices": "Every flight is arranged on request. A specialist confirms availability and cost."
+    "noPrices": "Every flight is arranged on request. A specialist confirms availability and cost.",
+    "occasionsLead": "Every flight is planned around the moment. Scroll through a few of the ones we fly most.",
+    "occasionCta": "Plan this flight",
+    "occasionMessage": "Hello Helibol 👋 I'd like to plan a scenic flight for:"
   },
   "contactPage": {
     "eyebrow": "CONTACT",
     "title": "Let's talk about your mission.",
-    "lead": "Reply within one business day. Emergencies: 24/7.",
+    "lead": "Tell us what you need and continue the conversation on WhatsApp. Emergencies: 24/7.",
     "phone": "Phone",
     "email": "Email",
     "visit": "Visit us",
     "emergencyTitle": "Is it an emergency?",
     "emergencyBody": "Call our 24/7 line right away. If a life is at risk, also call local emergency services.",
-    "formTitle": "Send us a message"
+    "formTitle": "Send us a message",
+    "funnelEyebrow": "WHATSAPP FUNNEL",
+    "funnelTitle": "Build your request. Send it in one tap.",
+    "funnelLead": "Three quick steps. Your message writes itself on the right, and opens in WhatsApp ready to send.",
+    "steps": ["About you", "Your flight", "Details"],
+    "fName": "Your name",
+    "fCompany": "Company (optional)",
+    "fOccasion": "What's the occasion?",
+    "fFleet": "Preferred aircraft",
+    "fFleetAny": "Advise me",
+    "fDate": "Preferred date",
+    "fPax": "Passengers",
+    "fOrigin": "Departure point or area",
+    "fMessage": "Anything else we should know?",
+    "occasions": [
+      "Birthday",
+      "Anniversary",
+      "Proposal",
+      "Corporate transfer",
+      "VIP / executive",
+      "Scenic flight",
+      "Film & photography",
+      "Energy & mining",
+      "Cargo & construction",
+      "Rescue & MEDEVAC",
+      "Other"
+    ],
+    "next": "Next",
+    "back": "Back",
+    "stepOf": "Step {current} of {total}",
+    "previewTitle": "Live preview",
+    "previewHint": "This is exactly what our team will receive.",
+    "previewOnline": "online",
+    "continue": "Continue with WhatsApp",
+    "needMore": "Add your name and the occasion to continue.",
+    "payloadIntro": "Hello Helibol 👋 I'm writing from helibol.com.",
+    "payloadOutro": "Thank you!",
+    "labels": {
+      "name": "Name",
+      "company": "Company",
+      "occasion": "Occasion",
+      "date": "Preferred date",
+      "pax": "Passengers",
+      "fleet": "Fleet choice",
+      "origin": "Departure",
+      "message": "Message"
+    },
+    "emailAlt": "Prefer email? Write to us at",
+    "cardsTitle": "Or reach us directly"
   },
   "form": {
     "name": "Full name",
@@ -335,7 +466,11 @@
     "dateStart": "Start date",
     "dateEnd": "End date (optional)",
     "flexibility": "Flexibility",
-    "flex": { "exact": "Exact date", "days": "± a few days", "flexible": "Flexible" },
+    "flex": {
+      "exact": "Exact date",
+      "days": "± a few days",
+      "flexible": "Flexible"
+    },
     "routeTitle": "Where, and what are we carrying?",
     "origin": "Origin or operating area",
     "destination": "Destination (optional)",
@@ -378,5 +513,32 @@
     "title": "This route isn't on our flight plan.",
     "body": "The page you're looking for doesn't exist or has moved.",
     "home": "Back to home"
+  },
+  "whatsapp": {
+    "fab": "Chat on WhatsApp",
+    "title": "Helibol",
+    "status": "Customer service · Santa Cruz, Bolivia",
+    "greeting": "Hi there 👋 How can we help you today? Pick a topic and we'll continue on WhatsApp.",
+    "options": [
+      {
+        "label": "Quote a mission",
+        "text": "Hello Helibol 👋 I'd like a quote for a mission."
+      },
+      {
+        "label": "Book a scenic flight",
+        "text": "Hello Helibol 👋 I'd like to book a scenic flight."
+      },
+      {
+        "label": "Corporate or VIP transfer",
+        "text": "Hello Helibol 👋 I'm interested in a corporate / VIP transfer."
+      },
+      {
+        "label": "Something else",
+        "text": "Hello Helibol 👋 I have a question."
+      }
+    ],
+    "detailed": "Build a detailed request",
+    "emergency": "Emergency? Call 24/7",
+    "close": "Close"
   }
 }

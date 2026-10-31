@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Cake, Heart, Gem, Briefcase, Camera, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { Eyebrow } from "@/components/motion/Eyebrow";
 import { SplitHeading } from "@/components/motion/SplitHeading";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -12,13 +12,12 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { HeliButton } from "@/components/ui/HeliButton";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { OccasionStack } from "@/components/sections/OccasionStack";
 import { img } from "@/content/media";
 import { site } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 import { faqJsonLd, serviceJsonLd } from "@/lib/jsonld";
 import type { Locale } from "@/i18n/routing";
-
-const occasionIcons = [Cake, Heart, Gem, Briefcase, Camera];
 
 export async function generateMetadata({
   params,
@@ -42,7 +41,7 @@ export default async function ScenicPage({ params }: { params: Promise<{ locale:
   setRequestLocale(locale);
   const t = await getTranslations("scenicPage");
   const tm = await getTranslations("meta");
-  const occasions = t.raw("occasions") as { title: string; body: string }[];
+  const occasions = t.raw("occasions") as { title: string; body: string; tag: string }[];
   const how = t.raw("how") as { title: string; body: string }[];
   const faqs = t.raw("faqs") as { q: string; a: string }[];
 
@@ -98,25 +97,16 @@ export default async function ScenicPage({ params }: { params: Promise<{ locale:
         </div>
       </section>
 
-      <section className="bg-white py-24 lg:py-32">
+      <section className="bg-white pt-24 lg:pt-32">
         <div className="container-hb">
-          <SectionHeader eyebrow={t("occasionsTitle").toUpperCase()} title={t("occasionsTitle")} />
-          <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {occasions.map((o, i) => {
-              const Icon = occasionIcons[i] ?? Heart;
-              return (
-                <Reveal as="li" key={o.title} delay={i * 0.06}>
-                  <TiltCard className="h-full">
-                    <div className="h-full rounded-[24px] border border-line bg-hb-sky/50 p-6">
-                      <Icon className="size-6 text-hb-blue" aria-hidden />
-                      <h3 className="mt-8 text-xl font-medium">{o.title}</h3>
-                      <p className="mt-1 text-sm text-ink-soft">{o.body}</p>
-                    </div>
-                  </TiltCard>
-                </Reveal>
-              );
-            })}
-          </ul>
+          <SectionHeader
+            eyebrow={t("occasionsTitle").toUpperCase()}
+            title={t("occasionsTitle")}
+            lead={t("occasionsLead")}
+          />
+          <div className="mt-6 pb-[6svh]">
+            <OccasionStack items={occasions} cta={t("occasionCta")} messagePrefix={t("occasionMessage")} />
+          </div>
         </div>
       </section>
 

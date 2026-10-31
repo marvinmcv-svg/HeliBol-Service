@@ -39,7 +39,9 @@
     "drag": "Arrastra",
     "years": "años",
     "since": "Desde 1988",
-    "liftOff": "Despegar"
+    "liftOff": "Despegar",
+    "pauseVideo": "Pausar video de fondo",
+    "playVideo": "Reproducir video de fondo"
   },
   "nav": {
     "home": "Inicio",
@@ -177,7 +179,13 @@
     "specsNote": "Datos de referencia. La capacidad real depende de altitud, temperatura y configuración; un especialista la confirma para su misión.",
     "turnkeyTitle": "Proyectos Turnkey",
     "turnkeyBody": "¿Necesita su propia aeronave? Le ayudamos a encontrarla, evaluarla y traerla, con nuestra red internacional.",
-    "turnkeyCta": "Consultar"
+    "turnkeyCta": "Consultar",
+    "openGallery": "Abrir galería",
+    "photo": "Foto {current} de {total}",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "close": "Cerrar",
+    "compare": "De un vistazo"
   },
   "aboutPage": {
     "eyebrow": "NOSOTROS",
@@ -213,17 +221,52 @@
     ],
     "valuesTitle": "Nuestros valores",
     "values": [
-      { "title": "Seguridad", "body": "Cada persona que sube a bordo vuelve a casa." },
-      { "title": "Precisión", "body": "La aeronave exacta, el plan exacto, cada vez." },
-      { "title": "Familia", "body": "Tratamos a clientes y tripulación como a los nuestros." },
-      { "title": "Servicio", "body": "Una llamada de distancia, 24/7." }
+      {
+        "title": "Seguridad",
+        "body": "Cada persona que sube a bordo vuelve a casa."
+      },
+      {
+        "title": "Precisión",
+        "body": "La aeronave exacta, el plan exacto, cada vez."
+      },
+      {
+        "title": "Familia",
+        "body": "Tratamos a clientes y tripulación como a los nuestros."
+      },
+      {
+        "title": "Servicio",
+        "body": "Una llamada de distancia, 24/7."
+      }
     ],
     "peopleTitle": "Nuestra gente",
     "peopleBody": "Pilotos, técnicos y tripulantes que conocen Bolivia desde el aire. Detrás de cada vuelo hay un equipo que trabaja en tierra para que todo salga bien.",
     "certTitle": "Estándares y auditorías",
     "certs": ["Estándares IOGP", "Auditados por operadoras internacionales", "Línea de emergencias 24/7"],
     "visitTitle": "Visítenos en el Hangar 22",
-    "visitBody": "Aeropuerto El Trompillo, Santa Cruz de la Sierra, Bolivia."
+    "visitBody": "Aeropuerto El Trompillo, Santa Cruz de la Sierra, Bolivia.",
+    "people": [
+      {
+        "role": "Pilotos",
+        "tag": "Operaciones de vuelo",
+        "body": "Capitanes que se sienten en casa en la selva, el Chaco y el altiplano. Altura, calor y lugares remotos son un día normal de trabajo."
+      },
+      {
+        "role": "Ingenieros de mantenimiento",
+        "tag": "Hangar 22",
+        "body": "Ingenieros licenciados que mantienen cada aeronave aeronavegable, inspección tras inspección, misión tras misión."
+      },
+      {
+        "role": "Tripulación de rescate",
+        "tag": "Respuesta 24/7",
+        "body": "Tripulaciones entrenadas para asegurar, cargar y cuidar pacientes desde el terreno hasta la puerta del hospital."
+      },
+      {
+        "role": "Operaciones y despacho",
+        "tag": "Centro de control",
+        "body": "El equipo detrás de la línea 24/7: planificación, combustible, permisos y seguimiento de cada vuelo."
+      }
+    ],
+    "peopleHint": "Pase el cursor o toque para conocer al equipo"
   },
   "operationsPage": {
     "eyebrow": "OPERACIONES",
@@ -235,7 +278,18 @@
     "sector": "Sector",
     "energy": "Energía y minería",
     "empty": "No hay proyectos con estos filtros.",
-    "count": "{count, plural, one {# proyecto} other {# proyectos}}"
+    "count": "{count, plural, one {# proyecto} other {# proyectos}}",
+    "globeTitle": "Bitácora de misiones",
+    "globeLead": "Gire el globo o toque un marcador. Cada tarjeta es una campaña documentada, volada desde nuestra base en El Trompillo.",
+    "statProjects": "Proyectos de exploración",
+    "statCountries": "Países",
+    "statSince": "Volando desde",
+    "countriesNote": "Bolivia · Argentina · Perú",
+    "distance": "a {km} km de la base",
+    "viewOnGlobe": "Ver en el globo",
+    "base": "Base principal",
+    "selection": "Una selección documentada de más de 100 proyectos. Archivo completo a pedido.",
+    "drag": "Arrastre para girar"
   },
   "scenicPage": {
     "eyebrow": "VUELOS PANORÁMICOS",
@@ -243,20 +297,46 @@
     "lead": "Bolivia desde arriba, con tu familia, tu pareja o tu equipo. Vuelos a pedido con tripulación profesional y 38 años de experiencia.",
     "occasionsTitle": "Para cada ocasión",
     "occasions": [
-      { "title": "Cumpleaños", "body": "Un regalo que nadie olvida." },
-      { "title": "Aniversario", "body": "Celebre desde las alturas." },
-      { "title": "Propuesta", "body": "La pregunta más importante, con la mejor vista." },
-      { "title": "Corporativo", "body": "Premie a su equipo o reciba a sus invitados." },
-      { "title": "Fotografía", "body": "Tomas aéreas para recuerdos o proyectos." }
+      {
+        "title": "Cumpleaños",
+        "body": "Un regalo que nadie olvida. Despegue a la hora dorada y brinde con la vista de Santa Cruz.",
+        "tag": "Regale el cielo"
+      },
+      {
+        "title": "Aniversario",
+        "body": "Celebre desde arriba: cascadas, cañones rojos y una cabina tranquila para dos.",
+        "tag": "Para dos"
+      },
+      {
+        "title": "Propuesta",
+        "body": "La pregunta más importante, con la mejor vista. Le ayudamos a planificar el lugar y el momento.",
+        "tag": "Diga sí"
+      },
+      {
+        "title": "Corporativo",
+        "body": "Premie a su equipo, atienda a sus invitados o traslade ejecutivos entre sitios, a su horario.",
+        "tag": "Equipos e invitados"
+      },
+      {
+        "title": "Fotografía",
+        "body": "Tomas aéreas con puertas abiertas para recuerdos, inmobiliarias o cine, con una tripulación que conoce los ángulos.",
+        "tag": "Imagen aérea"
+      }
     ],
     "howTitle": "Cómo funciona",
     "how": [
-      { "title": "Elija", "body": "Cuéntenos la ocasión, la fecha y cuántas personas vuelan." },
+      {
+        "title": "Elija",
+        "body": "Cuéntenos la ocasión, la fecha y cuántas personas vuelan."
+      },
       {
         "title": "Confirmamos clima y ruta",
         "body": "Un especialista confirma la aeronave, la ruta y las condiciones."
       },
-      { "title": "Vuele", "body": "Briefing de seguridad, despegue y a disfrutar." }
+      {
+        "title": "Vuele",
+        "body": "Briefing de seguridad, despegue y a disfrutar."
+      }
     ],
     "safetyTitle": "Tranquilidad en cada minuto",
     "safetyBody": "Antes de despegar, la tripulación le explica todo: cómo subir, dónde sentarse y qué esperar. Si el clima no acompaña, reprogramamos.",
@@ -284,18 +364,69 @@
       }
     ],
     "cta": "Consultar disponibilidad",
-    "noPrices": "Cada vuelo se arma a pedido. Un especialista le confirma disponibilidad y costo."
+    "noPrices": "Cada vuelo se arma a pedido. Un especialista le confirma disponibilidad y costo.",
+    "occasionsLead": "Cada vuelo se planifica en torno al momento. Recorra algunos de los que más volamos.",
+    "occasionCta": "Planificar este vuelo",
+    "occasionMessage": "Hola Helibol 👋 Quisiera planificar un vuelo panorámico para:"
   },
   "contactPage": {
     "eyebrow": "CONTACTO",
     "title": "Hablemos de su misión.",
-    "lead": "Respuesta en menos de 24 horas hábiles. Emergencias: 24/7.",
+    "lead": "Cuéntenos qué necesita y continúe la conversación por WhatsApp. Emergencias: 24/7.",
     "phone": "Teléfono",
     "email": "Correo",
     "visit": "Visítenos",
     "emergencyTitle": "¿Es una emergencia?",
     "emergencyBody": "Llame de inmediato a nuestra línea 24/7. Si hay riesgo de vida, llame también a los servicios de emergencia locales.",
-    "formTitle": "Envíenos un mensaje"
+    "formTitle": "Envíenos un mensaje",
+    "funnelEyebrow": "WHATSAPP",
+    "funnelTitle": "Arme su solicitud. Envíela con un toque.",
+    "funnelLead": "Tres pasos rápidos. Su mensaje se escribe solo a la derecha y se abre en WhatsApp listo para enviar.",
+    "steps": ["Sobre usted", "Su vuelo", "Detalles"],
+    "fName": "Su nombre",
+    "fCompany": "Empresa (opcional)",
+    "fOccasion": "¿Cuál es la ocasión?",
+    "fFleet": "Aeronave preferida",
+    "fFleetAny": "Recomiéndenme",
+    "fDate": "Fecha preferida",
+    "fPax": "Pasajeros",
+    "fOrigin": "Punto de salida o zona",
+    "fMessage": "¿Algo más que debamos saber?",
+    "occasions": [
+      "Cumpleaños",
+      "Aniversario",
+      "Propuesta",
+      "Traslado corporativo",
+      "VIP / ejecutivo",
+      "Vuelo panorámico",
+      "Filmación y fotografía",
+      "Energía y minería",
+      "Carga y construcción",
+      "Rescate y MEDEVAC",
+      "Otro"
+    ],
+    "next": "Siguiente",
+    "back": "Atrás",
+    "stepOf": "Paso {current} de {total}",
+    "previewTitle": "Vista previa",
+    "previewHint": "Esto es exactamente lo que recibirá nuestro equipo.",
+    "previewOnline": "en línea",
+    "continue": "Continuar en WhatsApp",
+    "needMore": "Agregue su nombre y la ocasión para continuar.",
+    "payloadIntro": "Hola Helibol 👋 Les escribo desde helibol.com.",
+    "payloadOutro": "¡Gracias!",
+    "labels": {
+      "name": "Nombre",
+      "company": "Empresa",
+      "occasion": "Ocasión",
+      "date": "Fecha preferida",
+      "pax": "Pasajeros",
+      "fleet": "Aeronave",
+      "origin": "Salida",
+      "message": "Mensaje"
+    },
+    "emailAlt": "¿Prefiere correo? Escríbanos a",
+    "cardsTitle": "O contáctenos directamente"
   },
   "form": {
     "name": "Nombre completo",
@@ -335,7 +466,11 @@
     "dateStart": "Fecha de inicio",
     "dateEnd": "Fecha de fin (opcional)",
     "flexibility": "Flexibilidad",
-    "flex": { "exact": "Fecha exacta", "days": "± unos días", "flexible": "Flexible" },
+    "flex": {
+      "exact": "Fecha exacta",
+      "days": "± unos días",
+      "flexible": "Flexible"
+    },
     "routeTitle": "¿Dónde y qué llevamos?",
     "origin": "Origen o zona de operación",
     "destination": "Destino (opcional)",
@@ -384,5 +519,32 @@
     "title": "Esta ruta no está en nuestro plan de vuelo.",
     "body": "La página que busca no existe o cambió de lugar.",
     "home": "Volver al inicio"
+  },
+  "whatsapp": {
+    "fab": "Escríbanos por WhatsApp",
+    "title": "Helibol",
+    "status": "Atención al cliente · Santa Cruz, Bolivia",
+    "greeting": "Hola 👋 ¿En qué podemos ayudarle hoy? Elija un tema y seguimos por WhatsApp.",
+    "options": [
+      {
+        "label": "Cotizar una misión",
+        "text": "Hola Helibol 👋 Quisiera una cotización para una misión."
+      },
+      {
+        "label": "Reservar un vuelo panorámico",
+        "text": "Hola Helibol 👋 Quisiera reservar un vuelo panorámico."
+      },
+      {
+        "label": "Traslado corporativo o VIP",
+        "text": "Hola Helibol 👋 Me interesa un traslado corporativo / VIP."
+      },
+      {
+        "label": "Otra consulta",
+        "text": "Hola Helibol 👋 Tengo una consulta."
+      }
+    ],
+    "detailed": "Armar una solicitud detallada",
+    "emergency": "¿Emergencia? Llame 24/7",
+    "close": "Cerrar"
   }
 }

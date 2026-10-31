@@ -137,3 +137,38 @@ export function formatSpec(spec: Spec, system: "metric" | "imperial", locale: "e
         : `${nf.format(Math.round(spec.value * 0.539957))} kt`;
   }
 }
+
+/** A spec split for animation: numeric specs count up, text specs render as-is. */
+export type SpecParts = { prefix: string; value?: number; suffix: string; text?: string };
+
+export function specParts(spec: Spec, system: "metric" | "imperial", locale: "es" | "en"): SpecParts {
+  switch (spec.key) {
+    case "engine":
+      return { prefix: "", suffix: "", text: spec.text };
+    case "rotor":
+      return { prefix: "", suffix: "", text: spec.text[locale] };
+    case "power":
+      return { prefix: "", value: spec.value, suffix: " shp" };
+    case "pax":
+      return { prefix: locale === "es" ? "hasta " : "up to ", value: spec.value, suffix: "" };
+    case "hook":
+      return system === "metric"
+        ? { prefix: "", value: spec.value, suffix: " kg" }
+        : { prefix: "", value: Math.round(spec.value * 2.20462), suffix: " lb" };
+    case "cruise":
+      return system === "metric"
+        ? { prefix: "", value: spec.value, suffix: " km/h" }
+        : { prefix: "", value: Math.round(spec.value * 0.539957), suffix: " kt" };
+  }
+}
+
+/** 0–1 share of the best figure in the fleet for this spec (for gauges). Undefined for text specs. */
+export function specShare(spec: Spec): number | undefined {
+  if (!("value" in spec)) return undefined;
+  const max = Math.max(
+    ...fleet.flatMap((a) =>
+      a.specs.filter((s) => s.key === spec.key && "value" in s).map((s) => (s as { value: number }).value),
+    ),
+  );
+  return max ? spec.value / max : undefined;
+}

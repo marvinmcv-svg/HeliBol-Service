@@ -5,6 +5,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import type { Img } from "@/content/media";
 import { site } from "@/content/site";
 import type { ReactNode } from "react";
+import { HeroVideo } from "./HeroVideo";
 
 /** Dark full-bleed inner-page hero with HUD details. */
 export function PageHero({
@@ -14,6 +15,7 @@ export function PageHero({
   image,
   children,
   accent = "sunset",
+  video,
 }: {
   eyebrow: string;
   title: string;
@@ -21,6 +23,12 @@ export function PageHero({
   image: Img;
   children?: ReactNode;
   accent?: "sunset" | "rescue";
+  /** Optional background loop over the poster image. */
+  video?: {
+    desktop: { mp4: string; webm?: string };
+    mobile?: { mp4: string; webm?: string };
+    label: { pause: string; play: string };
+  };
 }) {
   return (
     <section className="grain relative isolate flex min-h-[78svh] items-end overflow-hidden bg-hb-night text-white">
@@ -33,6 +41,7 @@ export function PageHero({
         cursor={false}
         imgClassName="opacity-70"
       />
+      {video && <HeroVideo {...video} />}
       <div
         aria-hidden
         className="absolute inset-0 bg-gradient-to-t from-hb-night via-hb-night/60 to-hb-night/20"

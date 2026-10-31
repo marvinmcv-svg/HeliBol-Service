@@ -13,6 +13,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Preloader } from "@/components/layout/Preloader";
 import { Consent } from "@/components/layout/Consent";
 import { HeliLauncher } from "@/components/heli/HeliLauncher";
+import { WhatsAppWidget } from "@/components/layout/WhatsAppWidget";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { organizationJsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
@@ -104,6 +105,7 @@ export default async function LocaleLayout({
             <main id="main">{children}</main>
             <Footer />
             <HeliLauncher />
+            <WhatsAppWidget />
           </SmoothScroll>
           <Cursor />
           <Consent />

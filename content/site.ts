@@ -11,8 +11,9 @@ export const site = {
   phone: "+591 3 352 9469",
   phoneHref: "tel:+59133529469",
   email: "info@helibol.com",
-  // Client to supply the WhatsApp Business number (plan §12.6). Empty → WhatsApp CTAs are hidden.
-  whatsapp: process.env.NEXT_PUBLIC_HELIBOL_WHATSAPP ?? "",
+  // WhatsApp customer-service line. The env var can override it; empty → WhatsApp CTAs are hidden.
+  whatsapp: process.env.NEXT_PUBLIC_HELIBOL_WHATSAPP || "59177165787",
+  whatsappDisplay: "+591 77165787",
   address: {
     street: "Hangar 22, Aeropuerto El Trompillo",
     city: "Santa Cruz de la Sierra",
@@ -37,6 +38,8 @@ export const yearsFlying = new Date().getFullYear() - site.founded; // 38 in 202
 
 export function whatsappHref(text?: string) {
   if (!site.whatsapp) return "";
-  const q = text ? `?text=${encodeURIComponent(text)}` : "";
-  return `https://wa.me/${site.whatsapp.replace(/\D/g, "")}${q}`;
+  // api.whatsapp.com directly: the wa.me redirect re-encodes the text and corrupts emoji.
+  const phone = site.whatsapp.replace(/\D/g, "");
+  const q = text ? `&text=${encodeURIComponent(text)}` : "";
+  return `https://api.whatsapp.com/send?phone=${phone}${q}`;
 }

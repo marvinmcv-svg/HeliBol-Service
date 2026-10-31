@@ -92,6 +92,7 @@ export function RevealImage({
             placeholder="blur"
             blurDataURL={image.blurDataURL}
             className={cn("object-cover", imgClassName)}
+            style={{ objectPosition: image.position }}
           />
         </div>
       </div>
