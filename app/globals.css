@@ -92,10 +92,11 @@ html.lenis body {
     @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12;
   }
   .glass {
-    @apply border border-white/15 bg-white/[0.06] backdrop-blur-xl;
+    /* No backdrop-filter: re-blurring on every scroll frame was the main source of jank. */
+    @apply border border-white/15 bg-white/[0.08];
   }
   .glass-light {
-    @apply border border-white/60 bg-white/70 backdrop-blur-xl;
+    @apply border border-white/60 bg-white/90;
   }
   /* Hairline instrument-panel grid. */
   .hairline-grid {
@@ -115,15 +116,17 @@ html.lenis body {
     position: relative;
     isolation: isolate;
   }
+  /* Pre-rendered noise tile at normal blending: a mix-blend-mode layer over the hero video forced
+     a full recomposite on every video frame. */
   .grain::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.1;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.35;
+    background-image: url("/media/grain.png");
+    background-size: 96px 96px;
   }
   .night-fade {
     background: linear-gradient(to top, rgb(6 19 31 / 0.7), rgb(6 19 31 / 0));
@@ -201,4 +204,10 @@ html:not([data-preloaded]) .hb-fade-up {
 .hb-slide {
   animation: hb-slide 1.25s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: var(--d, 0s);
+}
+
+/* Attention pings/bounces run a few cycles after load, then rest (constant repaints cost frames). */
+.animate-ping,
+.animate-bounce {
+  animation-iteration-count: 4;
 }

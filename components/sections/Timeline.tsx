@@ -150,7 +150,12 @@ export function Timeline({ items }: { items: Item[] }) {
               scale: 0.7,
               duration: 0.8,
               ease: "expo.out",
-              scrambleText: { text: year?.textContent ?? "", chars: "0123456789", speed: 0.6 },
+              scrambleText: {
+                text: year?.textContent ?? "",
+                // Digits for real years ("1988"), letters for word labels ("Crecimiento").
+                chars: /^\d+$/.test(year?.textContent ?? "") ? "0123456789" : "upperAndLowerCase",
+                speed: 0.6,
+              },
             },
             "<",
           )
@@ -189,7 +194,7 @@ export function Timeline({ items }: { items: Item[] }) {
   );
 
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className="relative overflow-x-clip">
       {geo && (
         <svg
           aria-hidden
@@ -232,7 +237,7 @@ export function Timeline({ items }: { items: Item[] }) {
             <li
               key={it.title}
               data-item
-              className="relative grid items-center gap-8 pl-12 md:grid-cols-2 md:gap-28 md:pl-0"
+              className="relative grid grid-cols-[minmax(0,1fr)] items-center gap-8 pl-12 md:grid-cols-2 md:gap-28 md:pl-0"
             >
               <span
                 aria-hidden
@@ -251,7 +256,7 @@ export function Timeline({ items }: { items: Item[] }) {
                 <p
                   data-year
                   className={cn(
-                    "tabular font-display text-6xl font-medium text-hb-blue md:text-8xl",
+                    "tabular font-display text-[clamp(2.25rem,9vw,6rem)] leading-none font-medium text-hb-blue",
                     even ? "origin-right" : "origin-left",
                   )}
                 >

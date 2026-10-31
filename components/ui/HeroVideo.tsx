@@ -68,7 +68,7 @@ export function HeroVideo({
         <button
           type="button"
           onClick={toggle}
-          className="absolute right-5 bottom-5 z-20 rounded-full border border-white/25 bg-hb-night/40 p-2.5 text-white/80 backdrop-blur-md transition-colors hover:bg-white hover:text-hb-night sm:right-8 sm:bottom-8"
+          className="absolute right-5 bottom-5 z-20 flex size-11 items-center justify-center rounded-full border border-white/25 bg-hb-night/60 text-white/80 transition-colors hover:bg-white hover:text-hb-night sm:right-8 sm:bottom-8"
           aria-label={paused ? label.play : label.pause}
         >
           {paused ? <Play className="size-4" /> : <Pause className="size-4" />}

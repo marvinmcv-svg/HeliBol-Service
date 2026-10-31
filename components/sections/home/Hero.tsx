@@ -63,7 +63,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="grain relative isolate h-[100svh] min-h-[640px] overflow-hidden bg-hb-night text-white"
+      className="grain relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-hb-night text-white sm:min-h-[640px]"
       aria-label="Helibol"
     >
       <div data-media className="absolute inset-0 will-change-transform">
@@ -107,15 +107,19 @@ export function Hero() {
         className="absolute inset-0 bg-gradient-to-r from-hb-night/70 via-transparent to-transparent"
       />
       {desktop && idle && !reduced && (
-        <div aria-hidden className="absolute inset-0 mix-blend-screen">
+        <div aria-hidden className="absolute inset-0">
           <RotorWashField />
         </div>
       )}
       <div aria-hidden className="hairline-grid absolute inset-0 opacity-40" />
 
-      <div data-copy className="container-hb relative z-10 flex h-full flex-col justify-end pb-28 md:pb-32">
+      {/* Content sets the height on short phones (no overflow under the header); pinned bottom otherwise. */}
+      <div
+        data-copy
+        className="container-hb relative z-10 flex flex-1 flex-col justify-end pt-36 pb-24 md:pt-40 md:pb-32"
+      >
         <p className="hb-fade-up eyebrow max-w-full text-hb-sunset">{t("eyebrow")}</p>
-        <h1 className="mt-6 max-w-[15ch] text-[clamp(2.9rem,8.2vw,8.25rem)] leading-[0.92] font-medium tracking-[-0.03em]">
+        <h1 className="mt-6 max-w-[15ch] text-[clamp(2.5rem,8.2vw,8.25rem)] leading-[0.92] font-medium tracking-[-0.03em]">
           {t("title")
             .split(" ")
             .map((word, i) => (
@@ -132,13 +136,13 @@ export function Hero() {
             ))}
         </h1>
         <p
-          className="hb-slide mt-7 max-w-xl text-lg leading-relaxed text-white/80 md:text-xl"
+          className="hb-slide mt-6 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg md:mt-7 md:text-xl"
           style={{ "--d": "0.5s" } as React.CSSProperties}
         >
           {t("sub")}
         </p>
         <div
-          className="hb-fade-up mt-10 flex flex-wrap gap-3"
+          className="hb-fade-up mt-8 flex flex-wrap gap-3 md:mt-10"
           style={{ "--d": "0.6s" } as React.CSSProperties}
         >
           <Button href="/cotizar" event="cta_quote" variant="primary">

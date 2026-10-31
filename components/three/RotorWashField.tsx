@@ -1,9 +1,9 @@
 "use client";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
-const COUNT = 2000;
+const COUNT = 1400;
 
 const vertex = /* glsl */ `
   uniform float uTime;
@@ -62,14 +62,14 @@ function Field() {
     [],
   );
 
+  const target = useMemo(() => new THREE.Vector2(), []);
+
   useFrame((_, dt) => {
     const m = ref.current;
     if (!m) return;
     m.uniforms.uTime!.value += dt;
-    mouse.current.lerp(
-      new THREE.Vector2((pointer.x * viewport.width) / 2, (pointer.y * viewport.height) / 2),
-      0.08,
-    );
+    target.set((pointer.x * viewport.width) / 2, (pointer.y * viewport.height) / 2);
+    mouse.current.lerp(target, 0.08);
     (m.uniforms.uMouse!.value as THREE.Vector2).copy(mouse.current);
     const calm = Math.min(window.scrollY / window.innerHeight, 1);
     m.uniforms.uCalm!.value += (calm - m.uniforms.uCalm!.value) * 0.1;
@@ -94,18 +94,45 @@ function Field() {
   );
 }
 
-/** Rotor-wash particle field (plan M3). Desktop only, lazy-loaded after idle by the hero. */
+/**
+ * Rotor-wash particle field (plan M3). Desktop only, lazy-loaded after idle by the hero.
+ * Renders only while the hero is on screen and the tab is visible — an always-on canvas over
+ * the hero video was the main source of scroll jank.
+ */
 export default function RotorWashField() {
+  const wrap = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(true);
+
+  useEffect(() => {
+    const el = wrap.current;
+    if (!el) return;
+    let inView = true;
+    const update = () => setActive(inView && document.visibilityState === "visible");
+    const io = new IntersectionObserver(([e]) => {
+      inView = Boolean(e?.isIntersecting);
+      update();
+    });
+    io.observe(el);
+    document.addEventListener("visibilitychange", update);
+    return () => {
+      io.disconnect();
+      document.removeEventListener("visibilitychange", update);
+    };
+  }, []);
+
   return (
-    <Canvas
-      dpr={[1, 1.5]}
-      camera={{ position: [0, 0, 6], fov: 50 }}
-      gl={{ antialias: false, alpha: true, powerPreference: "low-power" }}
-      className="!absolute inset-0"
-      eventSource={typeof document !== "undefined" ? document.body : undefined}
-      eventPrefix="client"
-    >
-      <Field />
-    </Canvas>
+    <div ref={wrap} className="absolute inset-0">
+      <Canvas
+        dpr={1}
+        frameloop={active ? "always" : "never"}
+        camera={{ position: [0, 0, 6], fov: 50 }}
+        gl={{ antialias: false, alpha: true, powerPreference: "low-power", stencil: false, depth: false }}
+        className="!absolute inset-0"
+        eventSource={typeof document !== "undefined" ? document.body : undefined}
+        eventPrefix="client"
+      >
+        <Field />
+      </Canvas>
+    </div>
   );
 }

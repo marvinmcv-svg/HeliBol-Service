@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { useEffect, useRef } from "react";
 import { HeliAvatar } from "./HeliAvatar";
 import { useHeli } from "@/lib/heli-store";
+import { useScrollAway } from "@/lib/hooks";
 import { useLenis } from "@/components/motion/SmoothScroll";
 import { track } from "@/lib/analytics";
 
@@ -15,6 +16,7 @@ const HeliPanel = dynamic(() => import("./HeliPanel").then((m) => m.HeliPanel), 
 export function HeliLauncher() {
   const t = useTranslations("heli");
   const { open, topic, openHeli, closeHeli } = useHeli();
+  const away = useScrollAway();
   const launcherRef = useRef<HTMLButtonElement>(null);
   const wasOpen = useRef(false);
 
@@ -33,15 +35,17 @@ export function HeliLauncher() {
             type="button"
             onClick={() => openHeli()}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={away ? { opacity: 0, y: 24 } : { opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            transition={{ type: "spring", stiffness: 260, damping: 26, delay: 0.4 }}
-            className="fixed right-4 bottom-4 z-[70] flex items-center gap-3 rounded-full border border-white/15 bg-hb-night/85 py-2 pr-5 pl-2 text-sm font-semibold text-white shadow-[0_10px_40px_-10px_rgba(6,19,31,0.6)] backdrop-blur-xl transition-colors hover:bg-hb-blue sm:right-6 sm:bottom-6"
+            transition={{ type: "spring", stiffness: 260, damping: 26, delay: away ? 0 : 0.15 }}
+            style={{ pointerEvents: away ? "none" : undefined }}
+            className="fixed right-4 bottom-4 z-[70] flex items-center gap-3 rounded-full border border-white/15 bg-hb-night/95 p-1.5 text-sm font-semibold text-white shadow-[0_10px_40px_-10px_rgba(6,19,31,0.6)] transition-colors hover:bg-hb-blue sm:right-6 sm:bottom-6 sm:py-2 sm:pr-5 sm:pl-2"
             aria-haspopup="dialog"
           >
             <HeliAvatar />
-            <span>{t("launcher")}</span>
-            <span aria-hidden className="relative flex size-2">
+            {/* Icon-only bubble on phones so it doesn't cover content; label from sm up. */}
+            <span className="sr-only sm:not-sr-only">{t("launcher")}</span>
+            <span aria-hidden className="relative hidden size-2 sm:flex">
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-hb-sunset opacity-75" />
               <span className="relative inline-flex size-2 rounded-full bg-hb-sunset" />
             </span>

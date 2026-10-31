@@ -48,7 +48,7 @@ export function Consent() {
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 40, opacity: 0 }}
-            className="fixed bottom-4 left-4 z-[60] max-w-sm rounded-3xl border border-white/10 bg-hb-night/95 p-5 text-sm text-white shadow-2xl backdrop-blur-xl"
+            className="fixed bottom-4 left-4 z-[60] max-w-sm rounded-3xl border border-white/10 bg-hb-night/95 p-5 text-sm text-white shadow-2xl"
           >
             <p className="leading-relaxed text-white/80">
               {t("text")}{" "}

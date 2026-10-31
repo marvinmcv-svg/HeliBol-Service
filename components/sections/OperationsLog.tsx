@@ -165,7 +165,7 @@ export function OperationsLog() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="pointer-events-none fixed z-[80] rounded-2xl border border-white/15 bg-hb-night/90 px-4 py-3 text-white shadow-xl backdrop-blur-xl"
+            className="pointer-events-none fixed z-[80] rounded-2xl border border-white/15 bg-hb-night/90 px-4 py-3 text-white shadow-xl"
             style={{ left: hover.x + 16, top: hover.y + 16 }}
           >
             <p className="font-semibold">{hovered.name}</p>

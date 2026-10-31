@@ -54,9 +54,9 @@ export function Nav() {
       >
         <div
           className={cn(
-            "transition-[background-color,border-color,backdrop-filter] duration-500",
+            "transition-[background-color,border-color] duration-500",
             solid || open
-              ? "border-b border-white/10 bg-hb-night/85 backdrop-blur-xl"
+              ? "border-b border-white/10 bg-hb-night/95"
               : "border-b border-transparent bg-gradient-to-b from-hb-night/50 to-transparent",
           )}
         >
@@ -112,7 +112,7 @@ export function Nav() {
           </nav>
         </div>
         {/* Slim emergency strip on small screens (plan §4) */}
-        <div className="flex justify-center bg-hb-night/80 py-1.5 text-white backdrop-blur lg:hidden">
+        <div className="flex justify-center bg-hb-night/95 py-1.5 text-white lg:hidden">
           <EmergencyPill className="border-transparent bg-transparent py-0.5" />
         </div>
       </motion.header>

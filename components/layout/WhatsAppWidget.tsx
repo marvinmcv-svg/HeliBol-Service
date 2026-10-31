@@ -7,6 +7,7 @@ import { siWhatsapp } from "simple-icons";
 import { Link, usePathname } from "@/i18n/navigation";
 import { site, whatsappHref } from "@/content/site";
 import { useHeli } from "@/lib/heli-store";
+import { useScrollAway } from "@/lib/hooks";
 import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
@@ -32,6 +33,7 @@ export function WhatsAppWidget() {
   const reduced = useReducedMotion();
   const [open, setOpen] = useState(false);
   const [hint, setHint] = useState(false);
+  const away = useScrollAway();
   const panelId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
   const options = t.raw("options") as { label: string; text: string }[];
@@ -75,7 +77,10 @@ export function WhatsAppWidget() {
   return (
     <div
       ref={rootRef}
-      className="fixed right-4 bottom-[76px] z-[70] flex flex-col items-end sm:right-6 sm:bottom-[92px]"
+      className={cn(
+        "fixed right-4 bottom-[76px] z-[70] flex flex-col items-end transition-[transform,opacity] duration-300 ease-out sm:right-6 sm:bottom-[92px]",
+        away && !open && "pointer-events-none translate-y-6 opacity-0",
+      )}
     >
       <AnimatePresence>
         {open && (
@@ -168,7 +173,7 @@ export function WhatsAppWidget() {
               initial={{ opacity: 0, x: 8 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 8 }}
-              className="pointer-events-none absolute right-full mr-3 rounded-full bg-white px-4 py-2 text-sm font-semibold whitespace-nowrap text-ink shadow-lg"
+              className="pointer-events-none absolute right-full mr-3 hidden rounded-full bg-white px-4 py-2 text-sm font-semibold whitespace-nowrap text-ink shadow-lg sm:block"
             >
               {t("fab")}
             </motion.span>

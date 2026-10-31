@@ -70,7 +70,7 @@ export function FleetShowroom() {
                   aria-selected={i === index}
                   onClick={() => setIndex(i)}
                   className={cn(
-                    "rounded-full border px-4 py-2 text-sm font-semibold transition-colors",
+                    "min-h-11 rounded-full border px-4 py-2.5 text-sm font-semibold transition-colors",
                     i === index
                       ? "border-hb-blue bg-hb-blue text-white"
                       : "border-line text-ink-soft hover:border-ink/40",
