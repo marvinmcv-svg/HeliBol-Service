@@ -8,8 +8,8 @@ import { Reveal } from "@/components/motion/Reveal";
 import { SpecTable } from "@/components/sections/SpecTable";
 import { FleetGallery } from "@/components/sections/FleetGallery";
 import { CtaBand } from "@/components/sections/CtaBand";
-import { Button } from "@/components/ui/Button";
 import { HeliButton } from "@/components/ui/HeliButton";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { FloatingCutout } from "@/components/sections/FloatingCutout";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { fleet, getAircraft } from "@/content/fleet";
@@ -93,12 +93,7 @@ export default async function AircraftPage({
                 ))}
               </ul>
               <div className="mt-10 flex flex-wrap gap-3">
-                <Button
-                  href={{ pathname: "/cotizar", query: { type: quoteType, aircraft: a.slug } }}
-                  event="cta_quote"
-                >
-                  {t("request")}
-                </Button>
+                <WhatsAppCta from={`fleet_${a.slug}`} label={t("request")} />
                 <HeliButton topic="fleet" />
               </div>
             </Reveal>

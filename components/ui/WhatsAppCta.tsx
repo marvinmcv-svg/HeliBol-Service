@@ -16,12 +16,21 @@ const PLANNER_ID = "whatsapp";
  */
 export function WhatsAppCta({
   className,
+  wrapClassName,
   short = false,
+  label,
+  icon = false,
   from = "cta",
   onNavigate,
 }: {
   className?: string;
+  /** Classes for the outer (magnetic) wrapper, e.g. responsive visibility. */
+  wrapClassName?: string;
   short?: boolean;
+  /** Overrides the default "Escríbanos por WhatsApp" text. */
+  label?: string;
+  /** Round icon-only button (mobile header). */
+  icon?: boolean;
   from?: string;
   onNavigate?: () => void;
 }) {
@@ -30,7 +39,7 @@ export function WhatsAppCta({
   if (!whatsappHref()) return null;
 
   return (
-    <Magnetic>
+    <Magnetic className={cn("inline-flex", wrapClassName)}>
       <Link
         href={{ pathname: "/contacto", hash: PLANNER_ID }}
         onClick={(e) => {
@@ -42,8 +51,10 @@ export function WhatsAppCta({
           if (lenis) lenis.scrollTo(target, { offset: -80 });
           else target.scrollIntoView({ behavior: "smooth", block: "start" });
         }}
+        aria-label={icon ? (label ?? t("cta")) : undefined}
         className={cn(
           "group/btn relative isolate inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold tracking-wide whitespace-nowrap text-[#06351b] shadow-[0_12px_30px_-12px_rgba(37,211,102,0.8)] transition-colors duration-300 hover:text-white",
+          icon && "size-11 px-0 py-0",
           className,
         )}
       >
@@ -51,10 +62,10 @@ export function WhatsAppCta({
           aria-hidden
           className="absolute inset-0 -z-10 translate-y-full rounded-full bg-[#128C7E] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:translate-y-0"
         />
-        <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden>
+        <svg viewBox="0 0 24 24" className={icon ? "size-5" : "size-4"} fill="currentColor" aria-hidden>
           <path d={siWhatsapp.path} />
         </svg>
-        {short ? t("ctaShort") : t("cta")}
+        {!icon && (label ?? (short ? t("ctaShort") : t("cta")))}
       </Link>
     </Magnetic>
   );

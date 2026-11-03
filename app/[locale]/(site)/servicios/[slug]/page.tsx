@@ -24,6 +24,7 @@ import { Faq } from "@/components/ui/Faq";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { HeliButton } from "@/components/ui/HeliButton";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { services, getService, type StepIcon } from "@/content/services";
 import { getAircraft } from "@/content/fleet";
 import { operations } from "@/content/operations";
@@ -109,9 +110,7 @@ export default async function ServiceDetail({
             <Phone className="size-4" /> {t("emergencyCall")} · {site.phone}
           </Button>
         ) : (
-          <Button href={{ pathname: "/cotizar", query: { type: s.quoteType } }} event="cta_quote">
-            {tc("quote")}
-          </Button>
+          <WhatsAppCta from={`service_${s.quoteType}`} />
         )}
         <HeliButton topic={s.emergency ? "emergency" : "quote"} />
       </PageHero>
@@ -138,15 +137,15 @@ export default async function ServiceDetail({
                     as="li"
                     key={i}
                     delay={i * 0.08}
-                    className="rounded-[24px] border border-line bg-hb-sky/50 p-7"
+                    className="rounded-[24px] border border-line bg-hb-sky/50 p-5 sm:p-7"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="flex size-12 items-center justify-center rounded-full bg-hb-blue text-white">
+                      <span className="flex size-10 items-center justify-center rounded-full bg-hb-blue text-white sm:size-12">
                         <Icon className="size-5" aria-hidden />
                       </span>
                       <span className="eyebrow tabular text-ink-mute">0{i + 1}</span>
                     </div>
-                    <h3 className="mt-6 font-sans text-lg font-semibold">{step.title[locale]}</h3>
+                    <h3 className="mt-4 font-sans text-lg font-semibold sm:mt-6">{step.title[locale]}</h3>
                     <p className="mt-2 leading-relaxed text-ink-soft">{step.body[locale]}</p>
                   </Reveal>
                 );

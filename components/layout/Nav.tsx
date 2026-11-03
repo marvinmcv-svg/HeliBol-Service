@@ -95,7 +95,8 @@ export function Nav() {
             <div className="flex items-center gap-3">
               <EmergencyPill className="hidden lg:inline-flex" />
               <LocaleSwitch className="hidden text-white md:flex" />
-              <WhatsAppCta short from="nav" className="hidden px-5 py-2.5 sm:inline-flex" />
+              <WhatsAppCta short from="nav" className="px-5 py-2.5" wrapClassName="hidden sm:inline-flex" />
+              <WhatsAppCta icon from="nav_icon" wrapClassName="sm:hidden" />
               <button
                 type="button"
                 className="inline-flex size-11 items-center justify-center rounded-full border border-white/20 xl:hidden"

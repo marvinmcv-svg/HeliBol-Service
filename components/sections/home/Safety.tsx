@@ -27,20 +27,22 @@ export async function Safety() {
       />
       <div className="container-hb relative">
         <SectionHeader eyebrow={t("eyebrow")} title={t("title")} dark className="max-w-4xl" />
-        <ul className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 grid gap-3 sm:mt-16 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
           {pillars.map((p, i) => {
             const Icon = icons[i] ?? ShieldCheck;
             return (
               <Reveal as="li" key={p.title} delay={i * 0.08}>
                 <TiltCard className="h-full">
-                  <div className="glass relative h-full rounded-[24px] p-7">
+                  <div className="glass relative h-full rounded-[24px] p-5 sm:p-7">
                     <div data-depth style={{ transform: "translateZ(40px)" }}>
-                      <span className="flex size-12 items-center justify-center rounded-full border border-white/15 text-hb-sunset">
-                        <Icon className="size-5" aria-hidden />
-                      </span>
-                      <span className="eyebrow tabular mt-8 block text-white/40">0{i + 1}</span>
-                      <h3 className="mt-2 text-xl font-medium">{p.title}</h3>
-                      <p className="mt-3 text-sm leading-relaxed text-white/70">{p.body}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="flex size-10 items-center justify-center rounded-full border border-white/15 text-hb-sunset sm:size-12">
+                          <Icon className="size-5" aria-hidden />
+                        </span>
+                        <span className="eyebrow tabular text-white/40">0{i + 1}</span>
+                      </div>
+                      <h3 className="mt-4 text-lg font-medium sm:mt-8 sm:text-xl">{p.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-white/70 sm:mt-3">{p.body}</p>
                     </div>
                   </div>
                 </TiltCard>

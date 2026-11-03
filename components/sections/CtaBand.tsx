@@ -41,7 +41,13 @@ export async function CtaBand({ quoteQuery }: { quoteQuery?: Record<string, stri
         className="pointer-events-none absolute -top-32 right-0 -z-10 size-[36rem] rounded-full bg-hb-sunset/10 blur-[140px]"
       />
       <div className="container-hb">
-        <SectionHeader dark eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
+        <SectionHeader
+          dark
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          lead={t("lead")}
+          leadClassName="hidden sm:block"
+        />
         <div className="mt-14 lg:mt-20">
           {whatsappHref() ? <WhatsAppPlanner initialTopic={topic} initialAircraft={aircraft} /> : null}
         </div>

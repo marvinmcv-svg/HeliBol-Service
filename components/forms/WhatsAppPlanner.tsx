@@ -110,7 +110,8 @@ export function WhatsAppPlanner({
   const reduced = useReducedMotion();
   const steps = t.raw("steps") as string[];
   const labels = t.raw("labels") as Labels;
-  const [step, setStep] = useState(0);
+  // Arriving from a service or aircraft page: the topic is known, so start on its details.
+  const [step, setStep] = useState(initialTopic ? 1 : 0);
   const [dir, setDir] = useState(1);
   const [v, setV] = useState<Values>(() => ({
     topic: initialTopic,
@@ -156,11 +157,18 @@ export function WhatsAppPlanner({
     setError(null);
   };
   const pickTopic = (key: PlannerTopicKey) => {
-    if (key === v.topic) return;
+    const advance = () => {
+      setDir(1);
+      setStep(1);
+      if (window.innerWidth < 1024) topRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+    };
+    if (key === v.topic) return advance();
     const next = getPlannerTopic(key)!;
     // Answers belong to a topic; keep the aircraft only if the new topic offers it.
     const keepAircraft = next.aircraft.some((s) => fleet.find((a) => a.slug === s)?.model === v.aircraft);
     patch({ topic: key, picks: {}, aircraft: keepAircraft ? v.aircraft : "" });
+    // A pick is the whole of step 1: move on so it's one tap, not two.
+    window.setTimeout(advance, 280);
   };
 
   const valid = (s: number) => {
@@ -269,7 +277,7 @@ export function WhatsAppPlanner({
           {t("stepOf", { current: step + 1, total: STEPS })}: {steps[step]}
         </p>
 
-        <div className="relative mt-10 min-h-[420px]">
+        <div className="relative mt-8 min-h-[340px] sm:mt-10 sm:min-h-[420px]">
           <AnimatePresence mode="wait" custom={dir} initial={false}>
             <motion.fieldset
               key={step}
@@ -284,7 +292,7 @@ export function WhatsAppPlanner({
 
               {step === 0 && (
                 <>
-                  <div role="radiogroup" aria-label={steps[0]} className="grid gap-3 sm:grid-cols-2 sm:gap-4">
+                  <div role="radiogroup" aria-label={steps[0]} className="grid gap-2 sm:grid-cols-2 sm:gap-4">
                     {plannerTopics.map((tp, i) => {
                       const active = v.topic === tp.key;
                       return (
@@ -295,7 +303,7 @@ export function WhatsAppPlanner({
                           aria-checked={active}
                           onClick={() => pickTopic(tp.key)}
                           className={cn(
-                            "group relative flex flex-col items-start overflow-hidden border p-5 text-left transition-all duration-300 sm:p-7",
+                            "group relative flex items-center gap-4 overflow-hidden border py-4 pr-12 pl-4 text-left transition-all duration-300 sm:flex-col sm:items-start sm:gap-0 sm:p-7",
                             active
                               ? "border-hb-sunset bg-hb-sunset/[0.08]"
                               : "border-white/10 bg-white/[0.02] hover:border-white/30 hover:bg-white/[0.04]",
@@ -304,16 +312,16 @@ export function WhatsAppPlanner({
                           <span className="tabular font-display text-sm text-hb-sunset">
                             {String(i + 1).padStart(2, "0")}
                           </span>
-                          <span className="mt-3 font-display text-xl font-medium tracking-[0.04em] text-white uppercase sm:mt-4 sm:text-2xl">
+                          <span className="font-display text-base font-medium tracking-[0.04em] text-white uppercase sm:mt-4 sm:text-2xl">
                             {tp.title[locale]}
                           </span>
-                          <span className="mt-2 text-sm leading-relaxed text-white/55">
+                          <span className="mt-2 hidden text-sm leading-relaxed text-white/55 sm:block">
                             {tp.line[locale]}
                           </span>
                           <span
                             aria-hidden
                             className={cn(
-                              "absolute top-5 right-5 grid size-5 place-items-center rounded-full border transition-colors",
+                              "absolute top-1/2 right-4 grid size-5 -translate-y-1/2 place-items-center rounded-full border transition-colors sm:top-5 sm:right-5 sm:translate-y-0",
                               active ? "border-hb-sunset bg-hb-sunset" : "border-white/20",
                             )}
                           >
@@ -332,7 +340,7 @@ export function WhatsAppPlanner({
               )}
 
               {step === 1 && topic && (
-                <div className="space-y-8">
+                <div className="space-y-7 sm:space-y-8">
                   <p className="font-display text-2xl font-medium tracking-[0.04em] text-white uppercase">
                     {topic.title[locale]}
                   </p>
@@ -533,7 +541,7 @@ export function WhatsAppPlanner({
           </AnimatePresence>
         </div>
 
-        <div className="mt-10 flex items-center justify-between gap-3 border-t border-white/10 pt-6">
+        <div className="mt-8 flex items-center justify-between gap-3 border-t border-white/10 pt-6 sm:mt-10">
           <button
             type="button"
             onClick={() => go(step - 1)}

@@ -4,8 +4,8 @@ import { PageHero } from "@/components/ui/PageHero";
 import { ServiceCard } from "@/components/sections/ServiceCard";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaBand } from "@/components/sections/CtaBand";
-import { Button } from "@/components/ui/Button";
 import { HeliButton } from "@/components/ui/HeliButton";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { services } from "@/content/services";
 import { img } from "@/content/media";
 import { pageMetadata } from "@/lib/seo";
@@ -34,9 +34,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   return (
     <>
       <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} image={img("logistics-camp")}>
-        <Button href="/cotizar" event="cta_quote">
-          {tc("quote")}
-        </Button>
+        <WhatsAppCta from="services" />
         <HeliButton />
       </PageHero>
       <section className="bg-white py-24 lg:py-32">

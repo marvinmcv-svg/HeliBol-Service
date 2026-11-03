@@ -23,7 +23,7 @@ function WaGlyph({ className }: { className?: string }) {
 
 /**
  * Persistent WhatsApp customer-service widget (all pages). A round button sits above the Heli
- * launcher; it opens a small chat card with topic shortcuts that hand off to wa.me with a
+ * launcher (tablet and up; phones get the green icon in the header instead); it opens a small chat card with topic shortcuts that hand off to wa.me with a
  * pre-written message. Hidden while Heli is open so the two never overlap.
  */
 export function WhatsAppWidget() {
@@ -89,7 +89,7 @@ export function WhatsAppWidget() {
     <div
       ref={rootRef}
       className={cn(
-        "fixed right-4 bottom-[76px] z-[70] flex flex-col items-end transition-[transform,opacity] duration-300 ease-out sm:right-6 sm:bottom-[92px]",
+        "fixed right-4 bottom-[76px] z-[70] hidden flex-col items-end transition-[transform,opacity] duration-300 ease-out sm:right-6 sm:bottom-[92px] sm:flex",
         (away || plannerInView) && !open && "pointer-events-none translate-y-6 opacity-0",
       )}
     >

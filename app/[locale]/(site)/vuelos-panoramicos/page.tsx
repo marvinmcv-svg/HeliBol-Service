@@ -9,8 +9,8 @@ import { RevealImage } from "@/components/motion/RevealImage";
 import { TiltCard } from "@/components/motion/TiltCard";
 import { Faq } from "@/components/ui/Faq";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { Button } from "@/components/ui/Button";
 import { HeliButton } from "@/components/ui/HeliButton";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { OccasionStack } from "@/components/sections/OccasionStack";
 import { img } from "@/content/media";
@@ -72,13 +72,7 @@ export default async function ScenicPage({ params }: { params: Promise<{ locale:
             <Reveal delay={0.25}>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75">{t("lead")}</p>
               <div className="mt-10 flex flex-wrap gap-3">
-                <Button
-                  href={{ pathname: "/cotizar", query: { type: "scenic" } }}
-                  variant="light"
-                  event="cta_quote"
-                >
-                  {t("cta")}
-                </Button>
+                <WhatsAppCta from="scenic" label={t("cta")} />
                 <HeliButton topic="scenic" />
               </div>
               <p className="mt-6 text-sm text-white/50">{t("noPrices")}</p>

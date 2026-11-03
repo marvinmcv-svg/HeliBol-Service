@@ -101,12 +101,8 @@ test("WhatsApp planner builds a tailored message", async ({ page }) => {
   await page.goto("/es/servicios/carga-y-construccion");
   const planner = page.locator("#whatsapp");
   await planner.scrollIntoViewIfNeeded();
-  // The service page preselects its own topic.
-  await expect(planner.getByRole("radio", { name: /Carga y construcción/ })).toHaveAttribute(
-    "aria-checked",
-    "true",
-  );
-  await planner.getByRole("button", { name: "Siguiente" }).click();
+  // The service page preselects its own topic and opens straight on its details.
+  await expect(planner.getByRole("radiogroup", { name: "¿Qué hay que mover?" })).toBeVisible();
   await planner.getByRole("radio", { name: "Más de 1.000 kg" }).click();
   await planner.getByRole("button", { name: "Siguiente" }).click();
   await planner.getByRole("button", { name: "Siguiente" }).click();
@@ -130,6 +126,14 @@ test("WhatsApp planner builds a tailored message", async ({ page }) => {
   expect(text).toContain("*Servicio:* Carga y construcción");
   expect(text).toContain("*Peso por izaje:* Más de 1.000 kg");
   expect(text).toContain("*Nombre:* Prueba Playwright");
+});
+
+test("WhatsApp planner advances on a single tap", async ({ page }) => {
+  await page.goto("/es");
+  const planner = page.locator("#whatsapp");
+  await planner.scrollIntoViewIfNeeded();
+  await planner.getByRole("radio", { name: /Vuelo panorámico/ }).click();
+  await expect(planner.getByRole("radiogroup", { name: "¿Cuál es la ocasión?" })).toBeVisible();
 });
 
 test("quote form blocks a step with missing data", async ({ page }) => {

@@ -23,15 +23,15 @@ export async function Footer() {
   return (
     <footer className="grain relative overflow-hidden bg-hb-blue-deep text-white">
       <div aria-hidden className="hairline-grid absolute inset-0 opacity-60" />
-      <div className="container-hb relative z-10 grid gap-12 pt-20 pb-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
-        <div>
+      <div className="container-hb relative z-10 grid grid-cols-2 gap-x-6 gap-y-10 pt-16 pb-12 sm:gap-12 sm:pt-20 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
+        <div className="col-span-2 md:col-span-1">
           <Logo className="h-14 w-auto" />
           <p className="eyebrow mt-6 text-hb-sunset">{site.brandLine}</p>
           <p className="mt-4 max-w-xs leading-relaxed text-white/70">{t("footer.mission")}</p>
           <WingBadge
             years={yearsFlying}
             label={t("footer.badge").replace(/^\d+\s*/, "")}
-            className="mt-8 h-16 w-auto text-hb-sunset"
+            className="mt-6 h-14 w-auto text-hb-sunset sm:mt-8 sm:h-16"
           />
         </div>
         <nav aria-label={t("footer.services")}>
@@ -58,7 +58,7 @@ export async function Footer() {
             ))}
           </ul>
         </nav>
-        <div>
+        <div className="col-span-2 md:col-span-1">
           <h2 className="eyebrow font-sans text-white/50">{t("footer.contact")}</h2>
           <address className="mt-5 space-y-3 not-italic">
             <p className="text-white/70">

@@ -118,7 +118,16 @@ export function Hero() {
         data-copy
         className="container-hb relative z-10 flex flex-1 flex-col justify-end pt-36 pb-24 md:pt-40 md:pb-32"
       >
-        <p className="hb-fade-up eyebrow max-w-full text-hb-sunset">{t("eyebrow")}</p>
+        <p className="hb-fade-up eyebrow max-w-full text-hb-sunset">
+          {/* Phones get the short version so it stays on one line. */}
+          {t("eyebrow").split(" · ").slice(0, 2).join(" · ")}
+          <span className="hidden sm:inline">
+            {t("eyebrow")
+              .split(" · ")
+              .slice(2)
+              .map((part) => ` · ${part}`)}
+          </span>
+        </p>
         <h1 className="mt-6 max-w-[15ch] text-[clamp(2.5rem,8.2vw,8.25rem)] leading-[0.92] font-medium tracking-[-0.03em]">
           {t("title")
             .split(" ")
