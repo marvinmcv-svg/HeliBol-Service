@@ -5,8 +5,7 @@ import { siWhatsapp } from "simple-icons";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { TiltCard } from "@/components/motion/TiltCard";
-import { WhatsAppFunnel } from "@/components/forms/WhatsAppFunnel";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { CtaBand } from "@/components/sections/CtaBand";
 import { ContactCard, type Accent } from "@/components/sections/ContactCard";
 import { img } from "@/content/media";
 import { site, whatsappHref } from "@/content/site";
@@ -59,15 +58,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
     <>
       <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} image={img("ramp-dusk")} />
 
-      <section className="relative overflow-hidden bg-hb-sky/60 py-20 lg:py-28">
-        <div aria-hidden className="hairline-grid-light absolute inset-0" />
-        <div className="container-hb relative">
-          <SectionHeader eyebrow={t("funnelEyebrow")} title={t("funnelTitle")} lead={t("funnelLead")} />
-          <div className="mt-12">
-            <WhatsAppFunnel />
-          </div>
-        </div>
-      </section>
+      <CtaBand />
 
       <section className="relative overflow-hidden bg-hb-night py-20 text-white lg:py-28">
         {/* Soft colour fields behind the glass */}

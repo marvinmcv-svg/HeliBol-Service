@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { Logo } from "@/components/ui/Logo";
-import { Button } from "@/components/ui/Button";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { EmergencyPill } from "./EmergencyPill";
 import { LocaleSwitch } from "./LocaleSwitch";
 import { navItems } from "./nav-items";
@@ -95,9 +95,7 @@ export function Nav() {
             <div className="flex items-center gap-3">
               <EmergencyPill className="hidden lg:inline-flex" />
               <LocaleSwitch className="hidden text-white md:flex" />
-              <Button href="/cotizar" event="cta_quote" className="hidden px-5 py-2.5 sm:inline-flex">
-                {t("common.quote")}
-              </Button>
+              <WhatsAppCta short from="nav" className="hidden px-5 py-2.5 sm:inline-flex" />
               <button
                 type="button"
                 className="inline-flex size-11 items-center justify-center rounded-full border border-white/20 xl:hidden"
@@ -150,9 +148,7 @@ export function Nav() {
               ))}
             </ul>
             <div className="container-hb relative mt-auto flex flex-wrap items-center gap-4 pb-10">
-              <Button href="/cotizar" event="cta_quote">
-                {t("common.quote")}
-              </Button>
+              <WhatsAppCta from="nav_mobile" onNavigate={() => setOpen(false)} />
               <LocaleSwitch className="text-white" />
               <a href={site.phoneHref} className="tabular text-sm text-white/70">
                 {site.phone}

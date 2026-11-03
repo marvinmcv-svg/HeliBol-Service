@@ -97,6 +97,41 @@ test("quote form submits through all five steps", async ({ page }) => {
   await expect(page.getByRole("status")).toContainText(/HB-[0-9A-F]{6}/);
 });
 
+test("WhatsApp planner builds a tailored message", async ({ page }) => {
+  await page.goto("/es/servicios/carga-y-construccion");
+  const planner = page.locator("#whatsapp");
+  await planner.scrollIntoViewIfNeeded();
+  // The service page preselects its own topic.
+  await expect(planner.getByRole("radio", { name: /Carga y construcción/ })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
+  await planner.getByRole("button", { name: "Siguiente" }).click();
+  await planner.getByRole("radio", { name: "Más de 1.000 kg" }).click();
+  await planner.getByRole("button", { name: "Siguiente" }).click();
+  await planner.getByRole("button", { name: "Siguiente" }).click();
+  await expect(planner.getByText("Escriba su nombre para continuar.")).toBeVisible();
+  await planner.locator("#planner-name").fill("Prueba Playwright");
+  await planner.getByRole("button", { name: "Siguiente" }).click();
+  await page.evaluate(() => {
+    (window as unknown as { __wa?: string }).__wa = "";
+    window.open = ((url: string) => {
+      (window as unknown as { __wa?: string }).__wa = url;
+      return null;
+    }) as typeof window.open;
+  });
+  await planner
+    .getByRole("button", { name: /Enviar por WhatsApp/ })
+    .first()
+    .click();
+  const url = await page.evaluate(() => (window as unknown as { __wa?: string }).__wa ?? "");
+  expect(url).toContain("api.whatsapp.com/send?phone=");
+  const text = decodeURIComponent(new URL(url).searchParams.get("text") ?? "");
+  expect(text).toContain("*Servicio:* Carga y construcción");
+  expect(text).toContain("*Peso por izaje:* Más de 1.000 kg");
+  expect(text).toContain("*Nombre:* Prueba Playwright");
+});
+
 test("quote form blocks a step with missing data", async ({ page }) => {
   await page.goto("/es/cotizar?type=energy");
   await page.getByRole("button", { name: "Siguiente" }).click();
@@ -161,6 +196,6 @@ test.describe("reduced motion", () => {
     expect(await page.locator("canvas").count()).toBe(0);
     expect(await page.locator(".pin-spacer").count()).toBe(0);
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await expect(page.getByText("Cuéntenos su misión. Nosotros nos encargamos del resto.")).toBeVisible();
+    await expect(page.getByText("Cuéntenos su misión. Le respondemos por WhatsApp.")).toBeVisible();
   });
 });

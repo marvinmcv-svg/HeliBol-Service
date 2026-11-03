@@ -39,6 +39,17 @@ export function WhatsAppWidget() {
   const options = t.raw("options") as { label: string; text: string }[];
 
   useEffect(() => setOpen(false), [pathname]);
+
+  // Step aside while the page's WhatsApp planner (the main CTA) is on screen.
+  const [plannerInView, setPlannerInView] = useState(false);
+  useEffect(() => {
+    setPlannerInView(false);
+    const el = document.getElementById("whatsapp");
+    if (!el) return;
+    const io = new IntersectionObserver(([e]) => setPlannerInView(!!e?.isIntersecting), { threshold: 0.15 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [pathname]);
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
@@ -79,7 +90,7 @@ export function WhatsAppWidget() {
       ref={rootRef}
       className={cn(
         "fixed right-4 bottom-[76px] z-[70] flex flex-col items-end transition-[transform,opacity] duration-300 ease-out sm:right-6 sm:bottom-[92px]",
-        away && !open && "pointer-events-none translate-y-6 opacity-0",
+        (away || plannerInView) && !open && "pointer-events-none translate-y-6 opacity-0",
       )}
     >
       <AnimatePresence>
@@ -150,7 +161,17 @@ export function WhatsAppWidget() {
               </ul>
             </div>
             <div className="flex flex-col gap-1 border-t border-black/5 px-5 py-3 text-sm">
-              <Link href="/contacto" className="font-semibold text-hb-blue-ink hover:underline">
+              <Link
+                href={{ pathname: "/contacto", hash: "whatsapp" }}
+                onClick={(e) => {
+                  const target = document.getElementById("whatsapp");
+                  if (!target) return;
+                  e.preventDefault();
+                  setOpen(false);
+                  target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className="font-semibold text-hb-blue-ink hover:underline"
+              >
                 {t("detailed")} →
               </Link>
               <a

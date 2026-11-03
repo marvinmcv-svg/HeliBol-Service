@@ -6,7 +6,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { ArrowDown } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { useFinePointerDesktop, useIdle, usePrefersReducedMotion } from "@/lib/hooks";
-import { Button } from "@/components/ui/Button";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { HeliButton } from "@/components/ui/HeliButton";
 import { img, video } from "@/content/media";
 import { site, yearsFlying } from "@/content/site";
@@ -145,9 +145,7 @@ export function Hero() {
           className="hb-fade-up mt-8 flex flex-wrap gap-3 md:mt-10"
           style={{ "--d": "0.6s" } as React.CSSProperties}
         >
-          <Button href="/cotizar" event="cta_quote" variant="primary">
-            {tc("quote")}
-          </Button>
+          <WhatsAppCta from="hero" />
           <HeliButton variant="ghost" />
         </div>
       </div>
